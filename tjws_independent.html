@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turkish Journal of War Studies | Türk Savaş Çalışmaları Dergisi</title>
+  <meta name="description" content="Standalone bilingual journal website concept for Turkish Journal of War Studies." />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --bg-soft:#101935;
+      --panel:rgba(17,26,52,.72);
+      --panel-2:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.12);
+      --text:#ecf1ff;
+      --muted:#aeb8d8;
+      --gold:#d7b46a;
+      --gold-2:#f2d79a;
+      --accent:#8db2ff;
+      --danger:#ff866b;
+      --ok:#8de0af;
+      --shadow:0 24px 60px rgba(0,0,0,.35);
+      --radius:22px;
+      --radius-sm:16px;
+      --max:1240px;
+      --transition:220ms ease;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(141,178,255,.18), transparent 32%),
+        radial-gradient(circle at top right, rgba(215,180,106,.16), transparent 28%),
+        linear-gradient(180deg,#08101f 0%, #0d1630 52%, #09111f 100%);
+      min-height:100vh;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(18px);
+      background:rgba(5,10,22,.68);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between; gap:18px;
+      padding:14px 0;
+    }
+    .brand{display:flex; align-items:center; gap:14px; min-width:0}
+    .crest{
+      width:50px;height:50px;border-radius:14px; position:relative; overflow:hidden;
+      background:linear-gradient(145deg, rgba(215,180,106,.25), rgba(141,178,255,.18));
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 10px 24px rgba(0,0,0,.18);
+      flex:none;
+    }
+    .crest svg{width:100%;height:100%}
+    .brand h1{font-size:1rem; margin:0; line-height:1.2; letter-spacing:.02em}
+    .brand p{margin:2px 0 0; color:var(--muted); font-size:.82rem}
+    .actions{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .lang-switch, .ghost-btn, .cta-btn, .nav-toggle{
+      border:1px solid var(--line); background:var(--panel-2); color:var(--text);
+      border-radius:999px; padding:10px 14px; cursor:pointer; transition:var(--transition);
+      font-weight:600;
+    }
+    .lang-switch:hover,.ghost-btn:hover,.cta-btn:hover,.nav-toggle:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.24)}
+    .cta-btn{background:linear-gradient(135deg, rgba(215,180,106,.28), rgba(141,178,255,.18));}
+    .nav-toggle{display:none}
+    .nav-links{display:flex; gap:10px; flex-wrap:wrap; padding:0 0 16px}
+    .nav-link{
+      padding:10px 14px; border-radius:999px; border:1px solid transparent; color:var(--muted);
+      transition:var(--transition); font-weight:600; font-size:.95rem;
+    }
+    .nav-link:hover,.nav-link.active{color:var(--text); border-color:var(--line); background:var(--panel-2)}
+
+    .hero{padding:48px 0 26px}
+    .hero-grid{display:grid; grid-template-columns:1.25fr .95fr; gap:26px; align-items:stretch}
+    .hero-card,.panel,.article-card,.mini-card,.archive-card,.board-card,.process-step,.contact-card,.guide-card{
+      background:var(--panel);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+      backdrop-filter: blur(14px);
+    }
+    .hero-card{padding:34px; position:relative; overflow:hidden}
+    .hero-card::after{
+      content:""; position:absolute; inset:auto -80px -80px auto; width:220px;height:220px;
+      background:radial-gradient(circle, rgba(215,180,106,.18), transparent 60%); pointer-events:none;
+    }
+    .eyebrow{display:inline-flex; align-items:center; gap:10px; color:var(--gold-2); font-weight:700; letter-spacing:.1em; text-transform:uppercase; font-size:.78rem}
+    .eyebrow::before{content:""; width:30px; height:1px; background:currentColor; opacity:.7}
+    .hero h2{font-size:clamp(2rem,4vw,4rem); line-height:1.02; margin:16px 0 16px; max-width:13ch}
+    .hero p.lead{font-size:1.08rem; line-height:1.7; color:var(--muted); max-width:62ch; margin:0 0 26px}
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap}
+    .stats-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+    .mini-card{padding:20px}
+    .mini-card .label{font-size:.82rem; color:var(--muted); text-transform:uppercase; letter-spacing:.08em}
+    .mini-card .value{font-size:1.65rem; font-weight:800; margin-top:10px}
+    .mini-card .desc{font-size:.92rem; color:var(--muted); margin-top:8px; line-height:1.5}
+
+    section{padding:18px 0 22px}
+    .section-head{display:flex; justify-content:space-between; align-items:end; gap:14px; margin-bottom:18px}
+    .section-head h3{margin:0; font-size:1.55rem}
+    .section-head p{margin:6px 0 0; color:var(--muted); max-width:70ch; line-height:1.65}
+
+    .grid-2{display:grid; grid-template-columns:1.1fr .9fr; gap:22px}
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+    .panel{padding:26px}
+    .panel h4{margin:0 0 12px; font-size:1.2rem}
+    .panel p,.panel li{color:var(--muted); line-height:1.7}
+    .feature-list{display:grid; gap:10px; margin:0; padding:0; list-style:none}
+    .feature-list li{
+      display:flex; gap:12px; align-items:flex-start; padding:12px 14px;
+      background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06); border-radius:14px;
+    }
+    .feature-list li::before{content:"◆"; color:var(--gold); margin-top:1px}
+    .issue-list{display:grid; gap:14px}
+    .article-card{padding:18px 18px 16px}
+    .article-meta{display:flex; justify-content:space-between; gap:12px; color:var(--muted); font-size:.85rem; margin-bottom:10px}
+    .article-card h5{font-size:1rem; line-height:1.5; margin:0 0 10px}
+    .article-card p{margin:0; color:var(--muted); font-size:.92rem}
+    .tag-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .tag{padding:7px 10px; border:1px solid var(--line); border-radius:999px; color:var(--muted); font-size:.78rem}
+
+    .archive-card,.board-card,.contact-card,.guide-card,.process-step{padding:20px}
+    .archive-card h5,.board-card h5,.contact-card h5,.guide-card h5,.process-step h5{margin:0 0 10px; font-size:1rem}
+    .archive-card p,.board-card p,.contact-card p,.guide-card p,.process-step p{margin:0; color:var(--muted); line-height:1.6}
+    .archive-card .issue{font-size:1.2rem; font-weight:800; margin-bottom:8px}
+    .board-role{display:inline-block; margin-bottom:10px; padding:6px 10px; border-radius:999px; background:rgba(141,178,255,.11); border:1px solid rgba(141,178,255,.2); color:#dfe8ff; font-size:.78rem; font-weight:700}
+
+    .process{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+    .process-step .num{width:34px; height:34px; border-radius:50%; display:grid; place-items:center; background:rgba(215,180,106,.16); color:var(--gold-2); font-weight:800; margin-bottom:14px}
+
+    .contact-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px}
+    .footer{padding:34px 0 60px; color:var(--muted)}
+    .footer-box{padding:22px 24px; background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:20px}
+    .footer small{display:block; line-height:1.7}
+
+    [data-lang="en"] [data-tr], [data-lang="tr"] [data-en]{display:none !important}
+
+    .tab-panels > section[data-panel]{display:none}
+    .tab-panels > section[data-panel].active{display:block; animation:fade .25s ease}
+    @keyframes fade{from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none}}
+
+    @media (max-width: 1080px){
+      .hero-grid,.grid-2,.grid-3,.grid-4,.process,.contact-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 780px){
+      .topbar-inner{align-items:flex-start}
+      .nav-toggle{display:inline-flex}
+      .nav-links{display:none; flex-direction:column; padding-top:0}
+      .nav-links.open{display:flex}
+      .hero-grid,.grid-2,.grid-3,.grid-4,.process,.contact-grid,.stats-grid{grid-template-columns:1fr}
+      .hero-card{padding:26px}
+      .hero h2{max-width:none}
+      .section-head{flex-direction:column; align-items:flex-start}
+      .actions{justify-content:flex-start}
+    }
+  </style>
+</head>
+<body data-lang="tr">
+  <header class="topbar">
+    <div class="wrap">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="crest" aria-hidden="true">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 10L75 20V44C75 60.4 64.8 75.2 50 82C35.2 75.2 25 60.4 25 44V20L50 10Z" fill="url(#g1)" stroke="rgba(255,255,255,.55)"/>
+              <path d="M50 24V67" stroke="#F6E6BE" stroke-width="4" stroke-linecap="round"/>
+              <path d="M34 39H66" stroke="#F6E6BE" stroke-width="4" stroke-linecap="round"/>
+              <path d="M38 59C45 53 55 53 62 59" stroke="#BBD2FF" stroke-width="4" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="g1" x1="25" y1="10" x2="78" y2="84" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#B4C8FF"/>
+                  <stop offset="1" stop-color="#CFA34B"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div>
+            <h1 data-tr>Türk Savaş Çalışmaları Dergisi</h1>
+            <h1 data-en>Turkish Journal of War Studies</h1>
+            <p data-tr>Bağımsız, iki dilli, modern dergi arayüzü tasarımı</p>
+            <p data-en>Independent, bilingual, modern journal interface concept</p>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="nav-toggle" id="navToggle">Menu</button>
+          <button class="lang-switch" id="langBtn">EN</button>
+          <a class="ghost-btn" href="https://dergipark.org.tr/tr/pub/tws" target="_blank" rel="noreferrer" data-tr>Orijinal Sayfa</a>
+          <a class="ghost-btn" href="https://dergipark.org.tr/en/pub/tws" target="_blank" rel="noreferrer" data-en>Original Site</a>
+          <a class="cta-btn" href="https://dergipark.org.tr/tr/pub/tws/issue/91607" target="_blank" rel="noreferrer" data-tr>Güncel Sayı</a>
+          <a class="cta-btn" href="https://dergipark.org.tr/en/pub/tws/issue/91607" target="_blank" rel="noreferrer" data-en>Current Issue</a>
+        </div>
+      </div>
+      <nav class="nav-links" id="navLinks">
+        <a href="#" class="nav-link active" data-tab="home" data-tr>Ana Sayfa</a>
+        <a href="#" class="nav-link" data-tab="about" data-tr>Hakkında</a>
+        <a href="#" class="nav-link" data-tab="scope" data-tr>Amaç & Kapsam</a>
+        <a href="#" class="nav-link" data-tab="boards" data-tr>Kurullar</a>
+        <a href="#" class="nav-link" data-tab="submission" data-tr>Yazar Rehberi</a>
+        <a href="#" class="nav-link" data-tab="ethics" data-tr>Etik & Açık Erişim</a>
+        <a href="#" class="nav-link" data-tab="archive" data-tr>Arşiv</a>
+        <a href="#" class="nav-link" data-tab="contact" data-tr>İletişim</a>
+
+        <a href="#" class="nav-link active" data-tab="home" data-en>Home</a>
+        <a href="#" class="nav-link" data-tab="about" data-en>About</a>
+        <a href="#" class="nav-link" data-tab="scope" data-en>Aim & Scope</a>
+        <a href="#" class="nav-link" data-tab="boards" data-en>Boards</a>
+        <a href="#" class="nav-link" data-tab="submission" data-en>Author Guide</a>
+        <a href="#" class="nav-link" data-tab="ethics" data-en>Ethics & Open Access</a>
+        <a href="#" class="nav-link" data-tab="archive" data-en>Archive</a>
+        <a href="#" class="nav-link" data-tab="contact" data-en>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="tab-panels">
+    <section data-panel="home" class="active">
+      <div class="wrap hero">
+        <div class="hero-grid">
+          <div class="hero-card hero">
+            <span class="eyebrow" data-tr>Hakemli Akademik Dergi</span>
+            <span class="eyebrow" data-en>Peer-Reviewed Academic Journal</span>
+            <h2 data-tr>Savaş çalışmaları için güçlü, çağdaş ve çift dilli bir vitrin</h2>
+            <h2 data-en>A stronger, sharper and bilingual digital front for war studies</h2>
+            <p class="lead" data-tr>
+              Bu bağımsız HTML tasarımı, Türk Savaş Çalışmaları Dergisi için daha kurumsal bir görünüm, daha berrak bilgi mimarisi ve İngilizce-Türkçe arasında tek tıkla geçiş sunar. Tüm ana alt sekmeler bu dosya içinde çalışır.
+            </p>
+            <p class="lead" data-en>
+              This standalone HTML concept gives the Turkish Journal of War Studies a more institutional visual identity, clearer information architecture, and one-click bilingual navigation. All major subsections work inside this single file.
+            </p>
+            <div class="hero-actions">
+              <a class="cta-btn" href="#" data-jump="submission" data-tr>Makale Gönderimi</a>
+              <a class="cta-btn" href="#" data-jump="submission" data-en>Submit Manuscript</a>
+              <a class="ghost-btn" href="#" data-jump="archive" data-tr>Arşivi Gör</a>
+              <a class="ghost-btn" href="#" data-jump="archive" data-en>Browse Archive</a>
+            </div>
+          </div>
+          <div class="stats-grid">
+            <div class="mini-card">
+              <div class="label" data-tr>Kuruluş</div>
+              <div class="label" data-en>Founded</div>
+              <div class="value">2020</div>
+              <div class="desc" data-tr>Hakemli yayın hayatına 2020 yılında başlayan dergi.</div>
+              <div class="desc" data-en>Peer-reviewed journal launched in 2020.</div>
+            </div>
+            <div class="mini-card">
+              <div class="label" data-tr>Periyot</div>
+              <div class="label" data-en>Periodicity</div>
+              <div class="value" data-tr>Yılda 2 Sayı</div>
+              <div class="value" data-en>2 Issues / Year</div>
+              <div class="desc" data-tr>Yayımlanma ayları: Nisan ve Ekim.</div>
+              <div class="desc" data-en>Publication months: April and October.</div>
+            </div>
+            <div class="mini-card">
+              <div class="label">e-ISSN</div>
+              <div class="value">2717-7432</div>
+              <div class="desc" data-tr>Türkçe ve İngilizce akademik çalışma kabul edilmektedir.</div>
+              <div class="desc" data-en>Accepts academic work in Turkish and English.</div>
+            </div>
+            <div class="mini-card">
+              <div class="label" data-tr>Ücret Politikası</div>
+              <div class="label" data-en>Fee Policy</div>
+              <div class="value" data-tr>Ücretsiz</div>
+              <div class="value" data-en>No Fees</div>
+              <div class="desc" data-tr>Gönderim, değerlendirme ve yayım süreçlerinde ücret alınmaz.</div>
+              <div class="desc" data-en>No charges for submission, review, or publication.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h3 data-tr>Güncel sayıdan öne çıkanlar</h3>
+            <h3 data-en>Highlights from the current issue</h3>
+            <p data-tr>Arayüz, son sayıyı daha görünür kılan kart yapısı ve hızlı erişim bağlantılarıyla tasarlandı.</p>
+            <p data-en>The interface is designed around a card-based layout to make the latest issue more visible and easier to explore.</p>
+          </div>
+        </div>
+        <div class="issue-list">
+          <article class="article-card">
+            <div class="article-meta"><span>2025 • Vol. 6 • Issue 2</span><span>pp. 132–152</span></div>
+            <h5>Askeri Cesaretin Evrimi</h5>
+            <p>İbrahim Sani Mert</p>
+            <div class="tag-row"><span class="tag" data-tr>Araştırma Makalesi</span><span class="tag" data-en>Research Article</span></div>
+          </article>
+          <article class="article-card">
+            <div class="article-meta"><span>2025 • Vol. 6 • Issue 2</span><span>pp. 153–170</span></div>
+            <h5>Hibrit Liderlik: Askeri Örgütlerde Yeni Nesil Liderlik Yaklaşımı</h5>
+            <p>Eren Odabaşı</p>
+            <div class="tag-row"><span class="tag" data-tr>Araştırma Makalesi</span><span class="tag" data-en>Research Article</span></div>
+          </article>
+          <article class="article-card">
+            <div class="article-meta"><span>2025 • Vol. 6 • Issue 2</span><span>pp. 109–123</span></div>
+            <h5>An Unforced Error: The Untold Story of the Suleymaniyah Hood Incident</h5>
+            <p>Edward J. Erickson</p>
+            <div class="tag-row"><span class="tag" data-tr>Düşünce Yazısı</span><span class="tag" data-en>Opinion Letter</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section data-panel="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h3 data-tr>Dergi profili</h3>
+            <h3 data-en>Journal profile</h3>
+            <p data-tr>Sade ama güçlü bir editoryal kimlik, savaş çalışmalarına odaklı bir yayın çizgisi ve ulusal/uluslararası görünürlük hedefi.</p>
+            <p data-en>A clean editorial identity, a focused war-studies scope, and a stronger positioning for national and international visibility.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="panel">
+            <h4 data-tr>Hakkında</h4>
+            <h4 data-en>About</h4>
+            <p data-tr>
+              Turkish Journal of War Studies (Türk Savaş Çalışmaları Dergisi), silahlı çatışma ve savaşın nedenleri, temel dinamikleri ve ulusal/uluslararası boyutları üzerine bilimsel yayınlara yer veren hakemli bir akademik dergidir. Dergi, askeri tarih, jeopolitik, askeri sosyoloji, siyasal şiddetin ekonomi politiği ve savaş/çatışma ile ilişkili diğer çalışma alanlarını kapsar.
+            </p>
+            <p data-en>
+              The Turkish Journal of War Studies is a peer-reviewed academic journal dedicated to the causes, dynamics, and national/international dimensions of war and armed conflict. Its scope includes military history, geopolitics, military sociology, the political economy of violence, and other fields related to war and conflict.
+            </p>
+          </div>
+          <div class="panel">
+            <h4 data-tr>Neden bu tasarım?</h4>
+            <h4 data-en>Why this design?</h4>
+            <ul class="feature-list">
+              <li><span data-tr>Daha profesyonel ana sayfa ve güçlü ilk izlenim</span><span data-en>A more professional landing page and stronger first impression</span></li>
+              <li><span data-tr>İngilizce/Türkçe tek dosya içinde kesintisiz kullanım</span><span data-en>Seamless Turkish/English use inside one single file</span></li>
+              <li><span data-tr>Makale gönderimi ve editoryal süreçlere hızlı yönlendirme</span><span data-en>Fast routing to manuscript submission and editorial processes</span></li>
+              <li><span data-tr>Arşiv, etik ve kurul bilgilerini görünür kılan içerik blokları</span><span data-en>Content blocks that surface archive, ethics, and board information</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-panel="scope">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h3 data-tr>Amaç ve kapsam</h3>
+            <h3 data-en>Aim and scope</h3>
+            <p data-tr>Derginin amacı savaş çalışmaları, askeri tarih ve ilişkili disiplinlerde Türk ve dünya akademik literatürüne katkı yapmaktır.</p>
+            <p data-en>The journal aims to contribute to Turkish and international academic literature in war studies, military history, and adjacent disciplines.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="panel">
+            <h4 data-tr>Odak alanları</h4>
+            <h4 data-en>Core fields</h4>
+            <ul class="feature-list">
+              <li><span data-tr>Savaş çalışmaları ve çatışma analizi</span><span data-en>War studies and conflict analysis</span></li>
+              <li><span data-tr>Askeri tarih ve yakınçağ araştırmaları</span><span data-en>Military history and modern-era research</span></li>
+              <li><span data-tr>Jeopolitik, güvenlik ve strateji</span><span data-en>Geopolitics, security, and strategy</span></li>
+              <li><span data-tr>Siyasal şiddetin sosyo-kültürel ve ekonomik temelleri</span><span data-en>Sociocultural and economic foundations of political violence</span></li>
+              <li><span data-tr>Türkiye ve Türk tarihi merkezli çalışmalar; özgün olmak kaydıyla diğer coğrafyalar</span><span data-en>Studies centered on Türkiye and Turkish history, while also accepting original work on other geographies</span></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h4 data-tr>Yayımlanma düzeni</h4>
+            <h4 data-en>Publication schedule</h4>
+            <div class="process">
+              <div class="process-step"><div class="num">1</div><h5 data-tr>Nisan</h5><h5 data-en>April</h5><p data-tr>Yılın ilk sayısı.</p><p data-en>First issue of the year.</p></div>
+              <div class="process-step"><div class="num">2</div><h5 data-tr>Ekim</h5><h5 data-en>October</h5><p data-tr>Yılın ikinci sayısı.</p><p data-en>Second issue of the year.</p></div>
+              <div class="process-step"><div class="num">3</div><h5 data-tr>İki dil</h5><h5 data-en>Bilingual</h5><p data-tr>Türkçe ve İngilizce yayın kabulü.</p><p data-en>Accepts Turkish and English submissions.</p></div>
+              <div class="process-step"><div class="num">4</div><h5 data-tr>Açık erişim</h5><h5 data-en>Open access</h5><p data-tr>Bilgiye görünür ve erişilebilir yayıncılık yaklaşımı.</p><p data-en>A visible and accessible publishing model.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-panel="boards">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h3 data-tr>Editoryal yapı</h3>
+            <h3 data-en>Editorial structure</h3>
+            <p data-tr>Dergi kurulları daha çağdaş bir kart yapısıyla ve uzmanlık alanı vurgusuyla gösterildi.</p>
+            <p data-en>The journal boards are presented with a cleaner card layout and clearer emphasis on expertise.</p>
+          </div>
+        </div>
+        <div class="grid-3">
+          <article class="board-card">
+            <span class="board-role" data-tr>Editör</span><span class="board-role" data-en>Editor</span>
+            <h5>Prof. Dr. Mesut UYAR</h5>
+            <p>University of New South Wales, Canberra</p>
+            <p data-tr>Uzmanlık: Uluslararası güvenlik, yakınçağ askeri tarih, Osmanlı tarihi, strateji.</p>
+            <p data-en>Expertise: international security, modern military history, Ottoman history, strategy.</p>
+          </article>
+          <article class="board-card">
+            <span class="board-role" data-tr>Editör Yardımcısı</span><span class="board-role" data-en>Associate Editor</span>
+            <h5>Doç. Dr. Emrah ÖZDEMİR</h5>
+            <p>Milli Savunma Üniversitesi, Kara Harp Okulu</p>
+            <p data-tr>Uzmanlık: Savaş çalışmaları.</p>
+            <p data-en>Expertise: war studies.</p>
+          </article>
+          <article class="board-card">
+            <span class="board-role" data-tr>Editör Kurulu</span><span class="board-role" data-en>Editorial Board</span>
+            <h5>Dr. Öğr. Üyesi Mehmet Fatih BAŞ</h5>
+            <p>Milli Savunma Üniversitesi, Kara Harp Enstitüsü</p>
+            <p data-tr>Uzmanlık: Türkiye Cumhuriyeti tarihi, yakınçağ ve Osmanlı askeri tarihi.</p>
+            <p data-en>Expertise: Republican Turkish history, modern and Ottoman military history.</p>
+          </article>
+          <article class="board-card">
+            <span class="board-role" data-tr>Editör Kurulu</span><span class="board-role" data-en>Editorial Board</span>
+            <h5>Hakan Kerim ÇİVİ</h5>
+            <p>Milli Savunma Üniversitesi, Alparslan Savunma Bilimleri Enstitüsü</p>
+            <p data-tr>Uzmanlık: Çağdaş askeri tarih.</p>
+            <p data-en>Expertise: contemporary military history.</p>
+          </article>
+          <article class="board-card">
+            <span class="board-role" data-tr>Editör Kurulu</span><span class="board-role" data-en>Editorial Board</span>
+            <h5>Dr. Ömer Furkan DEMİRCİ</h5>
+            <p>Milli Savunma Üniversitesi, Kara Harp Okulu</p>
+            <p data-tr>Uzmanlık: Savaş çalışmaları.</p>
+            <p data-en>Expertise: war studies.</p>
+          </article>
+          <article class="board-card">
+            <span class="board-role" data-tr>Danışma Kurulu</span><span class="board-role" data-en>Advisory Board</span>
+            <h5>Prof. Dr. Serhat GÜVENÇ</h5>
+            <p>Kadir Has University</p>
+            <p data-tr>Uzmanlık: Güvenlik çalışmaları, savaş çalışmaları.</p>
+            <p data-en>Expertise: security studies, war studies.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section data-panel="submission">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h3 data-tr>Yazar rehberi ve gönderim süreci</h3>
+            <h3 data-en>Author guide and submission flow</h3>
+            <p data-tr>Mevcut kurallara dayanarak sadeleştirilmiş, daha okunaklı bir başvuru deneyimi.</p>
+            <p data-en>A simplified, more readable author journey based on the current rules.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="panel">
+            <h4 data-tr>Temel yazım esasları</h4>
+            <h4 data-en>Core manuscript rules</h4>
+            <ul class="feature-list">
+              <li><span data-tr>Türkçe ve İngilizce akademik çalışmalar kabul edilir.</span><span data-en>Academic studies in Turkish and English are accepted.</span></li>
+              <li><span data-tr>Makaleler kaynakça dâhil yaklaşık 3500–8500 kelime aralığında olmalıdır.</span><span data-en>Articles should be approximately 3500–8500 words including references.</span></li>
+              <li><span data-tr>150–200 kelimelik Türkçe ve İngilizce öz/abstract ile 3–5 anahtar sözcük istenir.</span><span data-en>A 150–200 word Turkish and English abstract with 3–5 keywords is requested.</span></li>
+              <li><span data-tr>Metinler Tahoma, 11 punto, 1.5 satır; dipnotlar 10 punto ve tek satır aralığı ile hazırlanır.</span><span data-en>Texts should be prepared in Tahoma 11 pt, 1.5 line spacing; footnotes in 10 pt, single spacing.</span></li>
+              <li><span data-tr>Gönderim öncesi biçimsel kurallara ve makale şablonuna uyum beklenir.</span><span data-en>Compliance with formatting rules and the article template is expected before submission.</span></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h4 data-tr>Önerilen kullanıcı akışı</h4>
+            <h4 data-en>Recommended user flow</h4>
+            <div class="process">
+              <div class="process-step"><div class="num">1</div><h5 data-tr>Hazırla</h5><h5 data-en>Prepare</h5><p data-tr>Şablona göre makaleyi düzenle.</p><p data-en>Format the article according to the template.</p></div>
+              <div class="process-step"><div class="num">2</div><h5 data-tr>Kontrol et</h5><h5 data-en>Check</h5><p data-tr>Öz, anahtar kelime ve kaynakça uyumunu doğrula.</p><p data-en>Verify abstracts, keywords, and references.</p></div>
+              <div class="process-step"><div class="num">3</div><h5 data-tr>Gönder</h5><h5 data-en>Submit</h5><p data-tr>DergiPark üzerinden dosyanı yükle.</p><p data-en>Upload the manuscript through DergiPark.</p></div>
+              <div class="process-step"><div class="num">4</div><h5 data-tr>Takip et</h5><h5 data-en>Track</h5><p data-tr>Ön inceleme ve hakemlik sürecini izle.</p><p data-en>Track editorial screening and peer review.</p></div>
+            </div>
+            <div class="tag-row" style="margin-top:18px">
+              <a class="cta-btn" href="https://dergipark.org.tr/tr/pub/tws" target="_blank" rel="noreferrer" data-tr>DergiPark Gönderim Sayfası</a>
+              <a class="cta-btn" href="https://dergipark.org.tr/en/pub/tws" target="_blank" rel="noreferrer" data-en>DergiPark Submission Page</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-panel="ethics">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h3 data-tr>Etik ilkeler ve açık erişim</h3>
+            <h3 data-en>Ethical principles and open access</h3>
+            <p data-tr>Bu alan, derginin güvenilirlik ve görünürlük mesajını daha açık verir.</p>
+            <p data-en>This section makes the journal’s credibility and visibility model much clearer.</p>
+          </div>
+        </div>
+        <div class="grid-3">
+          <article class="guide-card">
+            <h5 data-tr>COPE temelli etik çerçeve</h5>
+            <h5 data-en>COPE-based ethical framework</h5>
+            <p data-tr>Etik ilkeler, COPE davranış kuralları esas alınarak şekillendirilmiştir. Değerlendirme süreçlerinde tarafsızlık, akademik ölçüt ve çıkar çatışmasının beyanı temel ilkelerdir.</p>
+            <p data-en>Ethical principles are framed around COPE standards. Neutral evaluation, academic criteria, and disclosure of conflicts of interest are core commitments.</p>
+          </article>
+          <article class="guide-card">
+            <h5 data-tr>Benzerlik ve intihal kontrolü</h5>
+            <h5 data-en>Similarity and plagiarism screening</h5>
+            <p data-tr>Tüm makaleler iThenticate üzerinden kontrol edilir. Açık intihal belirtileri gösteren çalışmalar reddedilir.</p>
+            <p data-en>All submissions are checked through iThenticate. Manuscripts showing clear signs of plagiarism are rejected.</p>
+          </article>
+          <article class="guide-card">
+            <h5 data-tr>Açık erişim ve lisans</h5>
+            <h5 data-en>Open access and licensing</h5>
+            <p data-tr>Dergi, Budapeşte Açık Erişim yaklaşımıyla uyumlu bir açık erişim anlayışını benimser ve CC BY-NC 4.0 lisansı kullanır.</p>
+            <p data-en>The journal adopts an open-access model aligned with the Budapest Open Access Initiative and uses the CC BY-NC 4.0 license.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section data-panel="archive">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h3 data-tr>Arşiv ve yayın sürekliliği</h3>
+            <h3 data-en>Archive and publication continuity</h3>
+            <p data-tr>Son sayılar, hacim ve sayı bilgisi ile tek bakışta erişilebilir hale getirildi.</p>
+            <p data-en>Recent issues are surfaced in a more accessible format with volume and issue information at a glance.</p>
+          </div>
+        </div>
+        <div class="grid-4">
+          <article class="archive-card"><div class="issue">2025 / 6(2)</div><h5 data-tr>Son sayı</h5><h5 data-en>Latest issue</h5><p data-tr>Güncel araştırma ve düşünce yazıları.</p><p data-en>Current research and opinion pieces.</p></article>
+          <article class="archive-card"><div class="issue">2025 / 6(1)</div><h5 data-tr>İlk sayı</h5><h5 data-en>First issue</h5><p data-tr>Yılın ilk dönem yayını.</p><p data-en>First publication cycle of the year.</p></article>
+          <article class="archive-card"><div class="issue">2024 / 5(2)</div><h5 data-tr>Arşiv sayısı</h5><h5 data-en>Archive issue</h5><p data-tr>Önceki ciltlere hızlı görünüm.</p><p data-en>Quick access to previous volumes.</p></article>
+          <article class="archive-card"><div class="issue">2024 / 5(1)</div><h5 data-tr>Arşiv sayısı</h5><h5 data-en>Archive issue</h5><p data-tr>Süreklilik ve kurumsal hafıza.</p><p data-en>Continuity and institutional memory.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section data-panel="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h3 data-tr>İletişim</h3>
+            <h3 data-en>Contact</h3>
+            <p data-tr>İletişim alanı daha net kartlarla ve görev ayrımıyla yapılandırıldı.</p>
+            <p data-en>The contact area is restructured with clearer cards and role-based separation.</p>
+          </div>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h5 data-tr>Editör</h5>
+            <h5 data-en>Editor</h5>
+            <p><strong>Mesut Uyar</strong></p>
+            <p>Antalya Bilim Üniversitesi</p>
+            <p><a href="mailto:mesutuyar@gmail.com">mesutuyar@gmail.com</a></p>
+          </article>
+          <article class="contact-card">
+            <h5 data-tr>Editör Yardımcısı</h5>
+            <h5 data-en>Associate Editor</h5>
+            <p><strong>Emrah Özdemir</strong></p>
+            <p>Çankırı Karatekin Üniversitesi</p>
+            <p><a href="mailto:eozdemir2002@gmail.com">eozdemir2002@gmail.com</a></p>
+          </article>
+          <article class="contact-card">
+            <h5 data-tr>Teknik İletişim</h5>
+            <h5 data-en>Technical Contact</h5>
+            <p><strong>Emrah Özdemir</strong></p>
+            <p>Çankırı Karatekin Üniversitesi</p>
+            <p><a href="mailto:eozdemir2002@gmail.com">eozdemir2002@gmail.com</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-box">
+        <small data-tr>
+          Bu dosya, Türk Savaş Çalışmaları Dergisi için bağımsız bir HTML arayüz önerisi olarak hazırlanmıştır. İçerik, DergiPark üzerindeki kamuya açık dergi bilgileri temel alınarak yeniden yapılandırılmıştır. Tasarım; daha güçlü ana sayfa, iki dilli gezinme, modern kart sistemi ve tek dosyada çalışan alt sekmeler üzerine kuruludur.
+        </small>
+        <small data-en>
+          This file is prepared as a standalone HTML interface proposal for the Turkish Journal of War Studies. The content is restructured from publicly available journal information on DergiPark. The design focuses on a stronger landing page, bilingual navigation, a modern card system, and fully working subsections inside a single file.
+        </small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const langBtn = document.getElementById('langBtn');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    const tabs = [...document.querySelectorAll('.nav-link')];
+    const panels = [...document.querySelectorAll('[data-panel]')];
+    const jumpers = [...document.querySelectorAll('[data-jump]')];
+
+    function currentLang(){ return body.getAttribute('data-lang') || 'tr'; }
+    function syncLangButton(){ langBtn.textContent = currentLang() === 'tr' ? 'EN' : 'TR'; }
+    function setLang(lang){ body.setAttribute('data-lang', lang); syncLangButton(); setActiveTab(getActivePanel() || 'home'); }
+    function getActivePanel(){ const active = document.querySelector('[data-panel].active'); return active ? active.dataset.panel : 'home'; }
+    function setActiveTab(tabName){
+      panels.forEach(panel => panel.classList.toggle('active', panel.dataset.panel === tabName));
+      tabs.forEach(tab => {
+        const langVisible = tab.hasAttribute('data-' + currentLang());
+        tab.classList.toggle('active', langVisible && tab.dataset.tab === tabName);
+      });
+      window.scrollTo({top:0, behavior:'smooth'});
+      navLinks.classList.remove('open');
+    }
+
+    langBtn.addEventListener('click', () => setLang(currentLang() === 'tr' ? 'en' : 'tr'));
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    tabs.forEach(tab => tab.addEventListener('click', e => { e.preventDefault(); setActiveTab(tab.dataset.tab); }));
+    jumpers.forEach(btn => btn.addEventListener('click', e => { e.preventDefault(); setActiveTab(btn.dataset.jump); }));
+    syncLangButton();
+  </script>
+</body>
+</html>
