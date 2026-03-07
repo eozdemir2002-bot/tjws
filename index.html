@@ -5,1261 +5,464 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Turkish Journal of War Studies | Türk Savaş Çalışmaları Dergisi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #1a1610;
-    --deep: #0f0d0a;
-    --parchment: #f5f0e8;
-    --cream: #faf7f2;
-    --gold: #8b6914;
-    --gold-light: #c9a227;
-    --gold-pale: #e8d5a3;
-    --red: #6b1a1a;
-    --red-light: #8b2020;
-    --border: #c8b89a;
-    --muted: #6b6052;
-    --rule: #d4c5a9;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Source Sans 3', sans-serif;
-    background: var(--cream);
-    color: var(--ink);
-    font-size: 15px;
-    line-height: 1.65;
-  }
-
-  /* ─── MASTHEAD ─── */
-  .masthead {
-    background: var(--deep);
-    color: var(--parchment);
-    border-bottom: 3px solid var(--gold);
-  }
-
-  .masthead-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 40px;
-    font-size: 11.5px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--gold-pale);
-  }
-
-  .masthead-inner a { color: var(--gold-pale); text-decoration: none; }
-  .masthead-inner a:hover { color: var(--gold-light); }
-
-  .masthead-links { display: flex; gap: 1.5rem; }
-
-  /* ─── HEADER ─── */
-  .site-header {
-    background: var(--deep);
-    padding: 3rem 2rem 2.5rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .site-header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: 
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 39px,
-        rgba(139,105,20,0.06) 39px,
-        rgba(139,105,20,0.06) 40px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 79px,
-        rgba(139,105,20,0.04) 79px,
-        rgba(139,105,20,0.04) 80px
-      );
-    pointer-events: none;
-  }
-
-  .header-ornament {
-    font-family: 'EB Garamond', serif;
-    font-size: 18px;
-    color: var(--gold);
-    letter-spacing: 0.3em;
-    margin-bottom: 1rem;
-    opacity: 0.8;
-  }
-
-  .journal-title-tr {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 13px;
-    color: var(--gold-pale);
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-    font-weight: 300;
-  }
-
-  .journal-title-en {
-    font-family: 'EB Garamond', serif;
-    font-size: clamp(30px, 5vw, 52px);
-    color: var(--parchment);
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    line-height: 1.15;
-    margin-bottom: 0.4rem;
-  }
-
-  .journal-title-en em {
-    font-style: italic;
-    color: var(--gold-light);
-  }
-
-  .header-rule {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin: 1.2rem auto;
-    max-width: 400px;
-  }
-
-  .header-rule::before,
-  .header-rule::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--gold));
-  }
-
-  .header-rule::after {
-    background: linear-gradient(to left, transparent, var(--gold));
-  }
-
-  .header-rule-diamond {
-    color: var(--gold);
-    font-size: 8px;
-  }
-
-  .header-meta {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    color: var(--gold-pale);
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .header-meta span { opacity: 0.7; }
-
-  /* ─── NAV ─── */
-  nav {
-    background: #16130e;
-    border-bottom: 1px solid var(--gold);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .nav-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    gap: 0;
-  }
-
-  .nav-inner a {
-    color: var(--parchment);
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.9rem 1.2rem;
-    display: block;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-    opacity: 0.75;
-  }
-
-  .nav-inner a:hover, .nav-inner a.active {
-    color: var(--gold-light);
-    border-bottom-color: var(--gold-light);
-    opacity: 1;
-  }
-
-  /* ─── LAYOUT ─── */
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 3rem;
-    padding: 3rem 0;
-  }
-
-  /* ─── SECTION HEADERS ─── */
-  .section-label {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.4rem;
-  }
-
-  .section-title {
-    font-family: 'EB Garamond', serif;
-    font-size: 24px;
-    font-weight: 400;
-    color: var(--ink);
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  /* ─── ABOUT BOX ─── */
-  .about-box {
-    background: var(--deep);
-    color: var(--parchment);
-    padding: 2.5rem 2rem;
-    margin-bottom: 2rem;
-    position: relative;
-  }
-
-  .about-box::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 4px;
-    background: linear-gradient(to bottom, var(--gold), var(--red));
-  }
-
-  .about-box h2 {
-    font-family: 'EB Garamond', serif;
-    font-size: 22px;
-    font-weight: 400;
-    color: var(--gold-light);
-    margin-bottom: 1rem;
-  }
-
-  .about-box p {
-    font-size: 14.5px;
-    line-height: 1.75;
-    color: #d4c9b8;
-    margin-bottom: 0.85rem;
-  }
-
-  .about-box p:last-child { margin-bottom: 0; }
-
-  .about-box .highlight {
-    background: rgba(139,105,20,0.15);
-    border: 1px solid rgba(139,105,20,0.3);
-    padding: 0.8rem 1rem;
-    margin-top: 1.2rem;
-    font-size: 13.5px;
-    color: var(--gold-pale);
-    font-style: italic;
-  }
-
-  /* ─── ARTICLES ─── */
-  .issue-header {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid var(--ink);
-  }
-
-  .issue-title {
-    font-family: 'EB Garamond', serif;
-    font-size: 22px;
-    font-weight: 400;
-  }
-
-  .issue-date {
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .article-type {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 2px 8px;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    margin-bottom: 0.4rem;
-  }
-
-  .article-card {
-    padding: 1.25rem 0;
-    border-bottom: 1px solid var(--rule);
-    display: grid;
-    grid-template-columns: 2rem 1fr;
-    gap: 0.75rem;
-    align-start: start;
-  }
-
-  .article-num {
-    font-family: 'EB Garamond', serif;
-    font-size: 20px;
-    color: var(--gold);
-    font-weight: 400;
-    line-height: 1.3;
-  }
-
-  .article-title {
-    font-family: 'EB Garamond', serif;
-    font-size: 17.5px;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.4;
-    margin-bottom: 0.3rem;
-    text-decoration: none;
-    display: block;
-    transition: color 0.2s;
-  }
-
-  .article-title:hover { color: var(--gold); }
-
-  .article-author {
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 0.2rem;
-  }
-
-  .article-pages {
-    font-size: 12px;
-    color: var(--border);
-    font-family: 'EB Garamond', serif;
-    letter-spacing: 0.05em;
-  }
-
-  .pdf-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--red);
-    text-decoration: none;
-    margin-top: 0.5rem;
-    padding: 3px 8px;
-    border: 1px solid var(--red);
-    transition: all 0.2s;
-  }
-
-  .pdf-link:hover {
-    background: var(--red);
-    color: white;
-  }
-
-  /* ─── SIDEBAR ─── */
-  .sidebar { border-left: 1px solid var(--rule); padding-left: 2rem; }
-
-  .widget {
-    margin-bottom: 2.5rem;
-  }
-
-  .widget-title {
-    font-family: 'EB Garamond', serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--ink);
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--rule);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .widget-title::before {
-    content: '';
-    display: inline-block;
-    width: 3px;
-    height: 14px;
-    background: var(--gold);
-  }
-
-  .issue-list { list-style: none; }
-
-  .issue-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 0.45rem 0;
-    border-bottom: 1px dotted var(--rule);
-    font-size: 13.5px;
-  }
-
-  .issue-list li:last-child { border-bottom: none; }
-
-  .issue-list a {
-    color: var(--ink);
-    text-decoration: none;
-    font-family: 'EB Garamond', serif;
-    font-size: 15px;
-  }
-
-  .issue-list a:hover { color: var(--gold); }
-
-  .issue-list .year-badge {
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-  }
-
-  .info-list { list-style: none; }
-
-  .info-list li {
-    padding: 0.5rem 0;
-    border-bottom: 1px dotted var(--rule);
-    font-size: 13px;
-    color: var(--muted);
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .info-list li:last-child { border-bottom: none; }
-
-  .info-list li strong {
-    color: var(--ink);
-    font-weight: 600;
-    min-width: 90px;
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
-  /* ─── BOARD ─── */
-  .board-section {
-    padding: 3rem 0;
-    border-top: 1px solid var(--rule);
-  }
-
-  .board-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-  }
-
-  .board-card {
-    border: 1px solid var(--rule);
-    padding: 1.25rem;
-    background: white;
-    position: relative;
-    transition: border-color 0.2s, transform 0.2s;
-  }
-
-  .board-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-2px);
-  }
-
-  .board-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--gold);
-  }
-
-  .board-card-name {
-    font-family: 'EB Garamond', serif;
-    font-size: 17px;
-    margin-bottom: 0.2rem;
-  }
-
-  .board-card-rank {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
-
-  .board-card-inst {
-    font-size: 12.5px;
-    color: var(--muted);
-    line-height: 1.5;
-    margin-bottom: 0.5rem;
-  }
-
-  .board-card-area {
-    font-size: 11.5px;
-    color: var(--border);
-    font-style: italic;
-    line-height: 1.4;
-  }
-
-  .board-section-title {
-    font-family: 'EB Garamond', serif;
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 0.3rem;
-    color: var(--ink);
-  }
-
-  .board-section-sub {
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.05em;
-  }
-
-  /* ─── SCOPE ─── */
-  .scope-section {
-    background: var(--parchment);
-    padding: 3rem 0;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .scope-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 1.5rem;
-  }
-
-  .scope-item {
-    padding: 1.5rem;
-    background: white;
-    border-left: 3px solid var(--gold);
-  }
-
-  .scope-item h4 {
-    font-family: 'EB Garamond', serif;
-    font-size: 17px;
-    margin-bottom: 0.5rem;
-    color: var(--ink);
-  }
-
-  .scope-item p {
-    font-size: 13.5px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-
-  /* ─── FOOTER ─── */
-  footer {
-    background: var(--deep);
-    color: var(--parchment);
-    padding: 3rem 2rem 2rem;
-    margin-top: 0;
-    border-top: 3px solid var(--gold);
-  }
-
-  .footer-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(200,184,154,0.2);
-  }
-
-  .footer-brand h3 {
-    font-family: 'EB Garamond', serif;
-    font-size: 22px;
-    color: var(--gold-light);
-    margin-bottom: 0.75rem;
-    font-weight: 400;
-  }
-
-  .footer-brand p {
-    font-size: 13px;
-    color: #8a7f72;
-    line-height: 1.65;
-  }
-
-  .footer-col h4 {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold-pale);
-    margin-bottom: 1rem;
-  }
-
-  .footer-col ul { list-style: none; }
-
-  .footer-col ul li {
-    margin-bottom: 0.5rem;
-  }
-
-  .footer-col ul li a {
-    color: #8a7f72;
-    text-decoration: none;
-    font-size: 13px;
-    transition: color 0.2s;
-  }
-
-  .footer-col ul li a:hover { color: var(--gold-light); }
-
-  .footer-bottom {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding-top: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 12px;
-    color: #5a5047;
-  }
-
-  .issn-badge {
-    display: inline-block;
-    background: rgba(139,105,20,0.2);
-    border: 1px solid rgba(139,105,20,0.3);
-    color: var(--gold-pale);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    padding: 3px 10px;
-    margin-right: 1rem;
-  }
-
-  .cc-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 12px;
-    color: #6a6057;
-  }
-
-  /* ─── TABS ─── */
-  .tab-nav {
-    display: flex;
-    gap: 0;
-    border-bottom: 2px solid var(--rule);
-    margin-bottom: 2rem;
-  }
-
-  .tab-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.75rem 1.5rem;
-    color: var(--muted);
-    border-bottom: 2px solid transparent;
-    margin-bottom: -2px;
-    transition: all 0.2s;
-  }
-
-  .tab-btn:hover, .tab-btn.active {
-    color: var(--ink);
-    border-bottom-color: var(--gold);
-  }
-
-  .tab-pane { display: none; }
-  .tab-pane.active { display: block; }
-
-  /* ─── INDEX BADGES ─── */
-  .index-section {
-    padding: 2rem 0;
-    border-top: 1px solid var(--rule);
-  }
-
-  .index-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1rem;
-    align-items: center;
-  }
-
-  .index-item {
-    border: 1px solid var(--border);
-    padding: 0.5rem 1rem;
-    font-size: 12px;
-    color: var(--muted);
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    background: white;
-  }
-
-  /* ─── ANNOUNCE STRIP ─── */
-  .announce {
-    background: var(--red);
-    color: white;
-    text-align: center;
-    padding: 0.6rem 2rem;
-    font-size: 12.5px;
-    letter-spacing: 0.05em;
-  }
-
-  .announce a { color: #ffd5d5; text-decoration: underline; }
-
-  /* ─── PAGE SECTIONS ─── */
-  .page-section { display: none; }
-  .page-section.active { display: block; }
-
-  /* ─── POLICY PAGE ─── */
-  .policy-content {
-    max-width: 760px;
-  }
-
-  .policy-content h3 {
-    font-family: 'EB Garamond', serif;
-    font-size: 20px;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    color: var(--ink);
-    font-weight: 400;
-    border-left: 3px solid var(--gold);
-    padding-left: 0.75rem;
-  }
-
-  .policy-content p {
-    font-size: 14.5px;
-    line-height: 1.75;
-    margin-bottom: 0.8rem;
-    color: #2a2420;
-  }
-
-  .policy-content ul {
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .policy-content ul li {
-    font-size: 14px;
-    line-height: 1.7;
-    margin-bottom: 0.4rem;
-    color: #2a2420;
-  }
-
-  /* responsive */
-  @media (max-width: 768px) {
-    .two-col { grid-template-columns: 1fr; }
-    .sidebar { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 2rem; }
-    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
-    .scope-grid { grid-template-columns: 1fr; }
-    .board-grid { grid-template-columns: 1fr; }
-    .nav-inner { overflow-x: auto; }
-    .nav-inner a { padding: 0.9rem 0.85rem; font-size: 11px; }
-  }
+:root {
+  --white:     #ffffff;
+  --snow:      #f6f9fc;
+  --ice:       #eaf4fb;
+  --mist:      #d8edf8;
+  --teal:      #1b8aaa;
+  --teal-mid:  #1a7a9e;
+  --teal-dark: #135f7a;
+  --teal-deep: #0d3d52;
+  --sky:       #4db8d4;
+  --sky-light: #a8dcea;
+  --ink:       #0f2233;
+  --slate:     #2d4a5e;
+  --steel:     #527a8c;
+  --muted:     #7a9aaa;
+  --rule:      #c8e0ed;
+  --border:    #b0d0e3;
+  --font-h: 'Montserrat', sans-serif;
+  --font-b: 'Nunito Sans', sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-b);background:var(--snow);color:var(--ink);font-size:15px;line-height:1.65;}
+
+/* TOPBAR */
+.topbar{background:var(--teal-deep);color:rgba(255,255,255,.65);font-family:var(--font-h);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;}
+.topbar-inner{max-width:1120px;margin:0 auto;padding:0 2rem;height:36px;display:flex;justify-content:space-between;align-items:center;}
+.topbar a{color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s;}
+.topbar a:hover{color:var(--sky-light);}
+.topbar-links{display:flex;gap:1.5rem;}
+.issn-chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:2px 10px;font-size:10px;letter-spacing:.12em;}
+
+/* HEADER */
+.site-header{
+  background:linear-gradient(135deg,var(--teal-deep) 0%,var(--teal-mid) 55%,var(--sky) 100%);
+  position:relative;overflow:hidden;
+}
+.site-header::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:44px 44px;pointer-events:none;
+}
+.header-inner{max-width:1120px;margin:0 auto;padding:2.5rem 2rem 3rem;display:flex;align-items:center;gap:2.5rem;position:relative;z-index:1;}
+.header-logo{width:108px;height:108px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 30px rgba(0,0,0,.22),0 0 0 3px rgba(255,255,255,.18);overflow:hidden;padding:8px;}
+.header-logo img{width:100%;height:100%;object-fit:contain;}
+.header-eyebrow{font-family:var(--font-h);font-size:10px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--sky-light);margin-bottom:.35rem;}
+.header-name-tr{font-family:var(--font-h);font-size:12.5px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:.25rem;}
+.header-title{font-family:var(--font-h);font-size:clamp(22px,3.5vw,42px);font-weight:800;color:white;line-height:1.08;letter-spacing:-.02em;margin-bottom:1rem;}
+.header-title span{color:var(--sky-light);font-weight:300;}
+.pills{display:flex;flex-wrap:wrap;gap:.5rem;}
+.pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.82);font-family:var(--font-h);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:4px 11px;border-radius:2px;}
+
+/* NAV */
+nav{background:white;border-bottom:3px solid var(--teal);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(13,61,82,.09);}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;}
+.nav-logo{width:28px;height:28px;margin-right:.9rem;border-radius:50%;object-fit:contain;background:var(--ice);padding:2px;}
+.nav-inner a{font-family:var(--font-h);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);text-decoration:none;padding:.95rem 1rem;display:block;border-bottom:3px solid transparent;margin-bottom:-3px;transition:color .2s,border-color .2s;cursor:pointer;white-space:nowrap;}
+.nav-inner a:hover{color:var(--teal);}
+.nav-inner a.active{color:var(--teal-dark);border-bottom-color:var(--teal);}
+
+/* ANNOUNCE */
+.announce{background:var(--ice);border-bottom:1px solid var(--mist);text-align:center;padding:.55rem 2rem;font-family:var(--font-h);font-size:11.5px;font-weight:600;letter-spacing:.04em;color:var(--teal-dark);}
+
+/* LAYOUT */
+.container{max-width:1120px;margin:0 auto;padding:0 2rem;}
+.two-col{display:grid;grid-template-columns:1fr 296px;gap:3rem;padding:3rem 0 4rem;}
+
+/* LABELS */
+.lbl{font-family:var(--font-h);font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--teal);margin-bottom:.35rem;}
+.sec-title{font-family:var(--font-h);font-size:21px;font-weight:800;color:var(--ink);margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:2px solid var(--rule);letter-spacing:-.01em;}
+
+/* ABOUT */
+.about-card{background:white;border:1px solid var(--border);border-top:4px solid var(--teal);padding:2rem;margin-bottom:2rem;border-radius:2px;}
+.about-card h2{font-family:var(--font-h);font-size:14px;font-weight:800;color:var(--teal-dark);margin-bottom:1rem;letter-spacing:.1em;text-transform:uppercase;}
+.about-card p{font-size:14.5px;line-height:1.75;color:var(--slate);margin-bottom:.75rem;}
+.about-card p:last-of-type{margin-bottom:0;}
+.about-hi{background:var(--ice);border-left:3px solid var(--teal);padding:.85rem 1rem;margin-top:1.2rem;font-size:13.5px;color:var(--teal-dark);font-style:italic;line-height:1.6;}
+
+/* ISSUE */
+.issue-hdr{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.5rem;padding-bottom:.7rem;border-bottom:2px solid var(--ink);}
+.issue-t{font-family:var(--font-h);font-size:19px;font-weight:800;color:var(--ink);}
+.issue-d{font-family:var(--font-h);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+
+/* TABS */
+.tab-nav{display:flex;border-bottom:2px solid var(--rule);margin-bottom:0;}
+.tab-btn{background:none;border:none;cursor:pointer;font-family:var(--font-h);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.7rem 1.2rem;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;}
+.tab-btn:hover,.tab-btn.active{color:var(--teal-dark);border-bottom-color:var(--teal);}
+.tab-pane{display:none;}
+.tab-pane.active{display:block;}
+
+/* ARTICLES */
+.art-badge{display:inline-block;font-family:var(--font-h);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:2px 8px;background:var(--ice);border:1px solid var(--border);color:var(--teal-dark);margin-bottom:.45rem;}
+.art-card{padding:1.4rem 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:2.2rem 1fr;gap:.7rem;align-items:start;}
+.art-card:last-child{border-bottom:none;}
+.art-num{font-family:var(--font-h);font-size:16px;font-weight:800;color:var(--teal);line-height:1.4;}
+.art-title{font-family:var(--font-h);font-size:15px;font-weight:700;color:var(--ink);line-height:1.45;margin-bottom:.3rem;text-decoration:none;display:block;transition:color .2s;}
+.art-title:hover{color:var(--teal);}
+.art-author{font-size:13px;color:var(--steel);margin-bottom:.2rem;font-family:var(--font-b);}
+.art-pages{font-family:var(--font-h);font-size:11px;color:var(--muted);letter-spacing:.04em;}
+.pdf-btn{display:inline-flex;align-items:center;gap:.3rem;font-family:var(--font-h);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:white;background:var(--teal);text-decoration:none;margin-top:.55rem;padding:4px 12px;border-radius:2px;transition:background .2s;}
+.pdf-btn:hover{background:var(--teal-dark);}
+
+/* SIDEBAR */
+.widget{background:white;border:1px solid var(--border);margin-bottom:1.25rem;border-radius:2px;overflow:hidden;}
+.w-head{background:var(--teal-deep);padding:.6rem 1rem;font-family:var(--font-h);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.8);}
+.w-body{padding:1rem;}
+.info-row{display:flex;padding:.48rem 0;border-bottom:1px solid var(--rule);gap:.5rem;font-size:13px;}
+.info-row:last-child{border-bottom:none;}
+.info-row dt{font-family:var(--font-h);font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);min-width:78px;padding-top:2px;}
+.info-row dd{color:var(--slate);}
+.issue-list{list-style:none;}
+.issue-list li{display:flex;justify-content:space-between;align-items:center;padding:.42rem 0;border-bottom:1px solid var(--rule);font-size:13.5px;}
+.issue-list li:last-child{border-bottom:none;}
+.issue-list a{color:var(--ink);text-decoration:none;font-family:var(--font-h);font-size:12.5px;font-weight:600;transition:color .2s;}
+.issue-list a:hover{color:var(--teal);}
+.yr{font-family:var(--font-h);font-size:9.5px;font-weight:700;color:white;background:var(--sky);padding:1px 7px;border-radius:2px;letter-spacing:.06em;}
+.ql{display:flex;align-items:center;gap:.5rem;padding:.48rem 0;border-bottom:1px solid var(--rule);font-family:var(--font-h);font-size:11.5px;font-weight:700;color:var(--slate);text-decoration:none;letter-spacing:.04em;transition:color .2s;cursor:pointer;}
+.ql:last-child{border-bottom:none;}
+.ql:hover{color:var(--teal);}
+.ql::before{content:'→';color:var(--teal);font-size:11px;}
+.ql.primary{color:var(--teal-dark);}
+
+/* SCOPE */
+.scope{background:var(--teal-deep);padding:3.5rem 0;}
+.scope .lbl{color:var(--sky-light);}
+.scope .sec-title{color:white;border-bottom-color:rgba(255,255,255,.2);}
+.scope-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;}
+.scope-item{background:rgba(255,255,255,.05);padding:1.5rem;transition:background .2s;}
+.scope-item:hover{background:rgba(255,255,255,.1);}
+.scope-ico{font-size:22px;margin-bottom:.7rem;display:block;}
+.scope-item h4{font-family:var(--font-h);font-size:12px;font-weight:700;color:var(--sky-light);margin-bottom:.45rem;letter-spacing:.04em;text-transform:uppercase;}
+.scope-item p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;}
+
+/* INDEX */
+.idx-sec{padding:2.5rem 0;border-top:1px solid var(--rule);}
+.idx-items{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1rem;}
+.idx-item{background:white;border:1px solid var(--border);padding:.42rem .9rem;font-family:var(--font-h);font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--slate);text-transform:uppercase;border-radius:2px;}
+
+/* BOARD */
+.board-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:1.25rem;margin-top:1.25rem;}
+.b-card{background:white;border:1px solid var(--border);border-top:3px solid var(--teal);padding:1.25rem;border-radius:2px;transition:transform .2s,box-shadow .2s;}
+.b-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(13,61,82,.09);}
+.b-rank{font-family:var(--font-h);font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.25rem;}
+.b-name{font-family:var(--font-h);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:.4rem;}
+.b-inst{font-size:12.5px;color:var(--steel);line-height:1.5;margin-bottom:.35rem;}
+.b-area{font-size:11.5px;color:var(--muted);font-style:italic;line-height:1.4;}
+.bsec-hdr{display:flex;align-items:center;gap:1rem;margin-top:3rem;margin-bottom:.25rem;}
+.bsec-hdr h3{font-family:var(--font-h);font-size:17px;font-weight:800;color:var(--ink);}
+.cnt{background:var(--teal);color:white;font-family:var(--font-h);font-size:10.5px;font-weight:700;padding:2px 10px;border-radius:20px;}
+.bsec-sub{font-size:12.5px;color:var(--muted);font-family:var(--font-h);letter-spacing:.04em;margin-bottom:0;}
+
+/* POLICY */
+.policy{max-width:760px;padding:3rem 0 4rem;}
+.policy h3{font-family:var(--font-h);font-size:13px;font-weight:800;color:var(--teal-dark);margin-top:2rem;margin-bottom:.65rem;text-transform:uppercase;letter-spacing:.08em;padding-left:.8rem;border-left:3px solid var(--teal);}
+.policy p{font-size:14.5px;line-height:1.75;color:var(--slate);margin-bottom:.8rem;}
+.policy ul{margin-left:1.25rem;margin-bottom:1rem;}
+.policy ul li{font-size:14px;line-height:1.7;color:var(--slate);margin-bottom:.4rem;}
+.policy a{color:var(--teal);}
+
+/* ARCHIVE */
+.arc-table{width:100%;border-collapse:collapse;margin-top:1.5rem;}
+.arc-table thead tr{background:var(--teal-deep);color:white;}
+.arc-table thead th{padding:.75rem 1.2rem;text-align:left;font-family:var(--font-h);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;}
+.arc-table tbody tr:nth-child(odd){background:white;}
+.arc-table tbody tr:nth-child(even){background:var(--ice);}
+.arc-table tbody tr:hover{background:var(--mist);}
+.arc-table td{padding:.75rem 1.2rem;border-bottom:1px solid var(--rule);vertical-align:middle;}
+.y-cell{font-family:var(--font-h);font-size:16px;font-weight:800;color:var(--teal);}
+.v-cell{font-family:var(--font-h);font-size:13.5px;font-weight:700;color:var(--ink);text-decoration:none;}
+.v-cell:hover{color:var(--teal);}
+.d-cell{font-size:12.5px;color:var(--steel);font-family:var(--font-h);}
+
+/* CTA */
+.cta-box{background:var(--ice);border:1px solid var(--border);padding:2rem;margin:2rem 0;text-align:center;border-radius:2px;}
+.cta-box p{font-family:var(--font-h);font-size:16px;font-weight:700;color:var(--teal-dark);margin-bottom:1.25rem;}
+.cta-btn{display:inline-block;background:var(--teal);color:white;font-family:var(--font-h);font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.85rem 2rem;text-decoration:none;border-radius:2px;transition:background .2s;}
+.cta-btn:hover{background:var(--teal-dark);}
+
+/* CONTACT */
+.con-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:760px;margin-top:1.5rem;}
+.con-card{background:white;border:1px solid var(--border);border-top:3px solid var(--teal);padding:1.75rem;border-radius:2px;}
+.con-card h3{font-family:var(--font-h);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;}
+.con-card p{font-size:13.5px;color:var(--slate);line-height:1.75;}
+
+/* FOOTER */
+footer{background:var(--teal-deep);color:rgba(255,255,255,.6);padding:3.5rem 2rem 0;border-top:4px solid var(--teal);}
+.ft-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08);}
+.ft-logo{display:flex;align-items:center;gap:.9rem;margin-bottom:1rem;}
+.ft-logo img{width:46px;height:46px;background:white;border-radius:50%;padding:4px;object-fit:contain;}
+.ft-logo h3{font-family:var(--font-h);font-size:15px;font-weight:700;color:white;line-height:1.3;}
+.ft-logo h3 span{display:block;font-size:9.5px;font-weight:600;letter-spacing:.14em;color:var(--sky-light);text-transform:uppercase;}
+.ft-brand p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.65;}
+.ft-chip{display:inline-block;border:1px solid rgba(255,255,255,.18);padding:2px 9px;font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.1em;margin-top:.75rem;}
+.ft-col h4{font-family:var(--font-h);font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sky-light);margin-bottom:1rem;}
+.ft-col ul{list-style:none;}
+.ft-col ul li{margin-bottom:.55rem;}
+.ft-col ul li a{color:rgba(255,255,255,.45);text-decoration:none;font-size:13px;font-family:var(--font-h);font-weight:600;transition:color .2s;cursor:pointer;}
+.ft-col ul li a:hover{color:var(--sky-light);}
+.ft-bot{max-width:1120px;margin:0 auto;padding:1.2rem 0 1.5rem;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-h);font-size:10.5px;font-weight:600;color:rgba(255,255,255,.28);letter-spacing:.04em;}
+
+/* PAGES */
+.page-section{display:none;}
+.page-section.active{display:block;}
+
+@media(max-width:820px){
+  .two-col{grid-template-columns:1fr;}
+  .scope-grid{grid-template-columns:1fr 1fr;}
+  .ft-inner{grid-template-columns:1fr;gap:2rem;}
+  .con-grid{grid-template-columns:1fr;}
+  .header-inner{flex-direction:column;text-align:center;gap:1.5rem;}
+  .pills{justify-content:center;}
+  .nav-inner{overflow-x:auto;}
+  .nav-inner a{padding:.95rem .75rem;font-size:10px;}
+}
 </style>
 </head>
 <body>
 
-<!-- Announce -->
-<div class="announce">
-  TJWS makale gönderim, değerlendirme ve yayım süreçlerinin hiçbirisinde herhangi bir <strong>ücret talep edilmemektedir</strong>.
-</div>
-
-<!-- Masthead -->
-<div class="masthead">
-  <div class="masthead-inner">
-    <div>
-      <span class="issn-badge">e-ISSN: 2717-7432</span>
-      Açık Erişim · Yılda 2 Sayı · Başlangıç: 2020
-    </div>
-    <div class="masthead-links">
+<div class="topbar">
+  <div class="topbar-inner">
+    <div><span class="issn-chip">e-ISSN: 2717-7432</span>&nbsp;&nbsp;Açık Erişim &middot; Yılda 2 Sayı &middot; Başlangıç: 2020</div>
+    <div class="topbar-links">
       <a href="https://dergipark.org.tr/tr/pub/tws" target="_blank">DergiPark</a>
-      <a href="#iletisim" onclick="showPage('iletisim')">İletişim</a>
-      <a href="#makale" onclick="showPage('makale')">Makale Gönder</a>
+      <a href="#" onclick="showPage('iletisim')">İletişim</a>
+      <a href="#" onclick="showPage('makale')">Makale Gönder</a>
     </div>
   </div>
 </div>
 
-<!-- Site Header -->
 <header class="site-header">
-  <div class="header-ornament">✦ &nbsp; TJWS &nbsp; ✦</div>
-  <p class="journal-title-tr">Türk Savaş Çalışmaları Dergisi</p>
-  <h1 class="journal-title-en">Turkish Journal of <em>War Studies</em></h1>
-  <div class="header-rule"><span class="header-rule-diamond">◆</span></div>
-  <div class="header-meta">
-    <span>Hakemli · Bilimsel</span>
-    <span>Türkçe &amp; İngilizce</span>
-    <span>Açık Erişim</span>
-    <span>CROSSREF DOI</span>
-  </div>
-</header>
-
-<!-- Navigation -->
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="active" onclick="showPage('home')">Ana Sayfa</a>
-    <a href="#" onclick="showPage('arsiv')">Arşiv</a>
-    <a href="#" onclick="showPage('hakkinda')">Hakkında</a>
-    <a href="#" onclick="showPage('kurul')">Dergi Kurulları</a>
-    <a href="#" onclick="showPage('yayin')">Yazım Kuralları</a>
-    <a href="#" onclick="showPage('etik')">Etik İlkeler</a>
-    <a href="#" onclick="showPage('iletisim')">İletişim</a>
-  </div>
-</nav>
-
-<main>
-
-<!-- ═══ HOME PAGE ═══ -->
-<div id="page-home" class="page-section active">
-  <div class="container">
-    <div class="two-col">
-
-      <!-- MAIN COLUMN -->
-      <div>
-        <!-- About -->
-        <div class="about-box">
-          <h2>Dergi Hakkında</h2>
-          <p>Yayın hayatına 2020 yılında başlayan <strong>Turkish Journal of War Studies</strong> (Türk Savaş Çalışmaları Dergisi) silahlı çatışma ve savaş kavramının nedenleri, temel dinamikleri ve ulusal ve uluslararası boyutları gibi konu başlıklarında bilimsel yayınlara yer veren hakemli bir akademik dergidir.</p>
-          <p>Derginin temel alanlarını askeri tarih, siyasal şiddetin ekonomi politiği ve sosyokültürel temelleri, jeopolitik ve askeri sosyoloji gibi konular oluşturmakla birlikte savaş ve çatışma ile ilintili diğer alan çalışmaları da dikkate alınmaktadır.</p>
-          <p>Uluslararası alanda savaş çalışmaları üzerine geniş bir literatür bulunmasına karşın, ulusal alanda var olan boşluğun nitelikli akademik çalışmalarla doldurulması hedeflenmektedir. Türk savaş çalışmalarının uluslararası literatüre kazandırılması da diğer bir önemli katkı olarak değerlendirilmektedir.</p>
-          <div class="highlight">Dergiye gönderilen tüm makaleler <strong>iThenticate</strong> programı tarafından intihal açısından kontrol edilmektedir. Bu dergide <strong>Budapeşte Açık Erişim Girişimi</strong>'nin tanımlaması ve <strong>COPE</strong> Davranış Kuralları esas alınmaktadır.</div>
-        </div>
-
-        <!-- Current Issue -->
-        <div>
-          <div class="section-label">Güncel Sayı</div>
-          <div class="issue-header">
-            <h2 class="issue-title">Cilt 6, Sayı 2</h2>
-            <span class="issue-date">Ekim 2025</span>
-          </div>
-
-          <div class="tab-nav">
-            <button class="tab-btn active" onclick="switchTab(this, 'tab-research')">Araştırma Makaleleri</button>
-            <button class="tab-btn" onclick="switchTab(this, 'tab-opinion')">Düşünce Yazıları</button>
-          </div>
-
-          <div id="tab-research" class="tab-pane active">
-
-            <div class="article-card">
-              <div class="article-num">1</div>
-              <div>
-                <div class="article-type">Araştırma Makalesi</div>
-                <a class="article-title" href="https://dergipark.org.tr/tr/pub/tws/article/1794848" target="_blank">Askeri Cesaretin Evrimi</a>
-                <div class="article-author">İbrahim Sani Mert</div>
-                <div class="article-pages">Sayfa: 132–152</div>
-                <a class="pdf-link" href="https://dergipark.org.tr/tr/download/article-file/5290932" target="_blank">▶ PDF</a>
-              </div>
-            </div>
-
-            <div class="article-card">
-              <div class="article-num">2</div>
-              <div>
-                <div class="article-type">Araştırma Makalesi</div>
-                <a class="article-title" href="https://dergipark.org.tr/tr/pub/tws/article/1724692" target="_blank">Hibrit Liderlik: Askeri Örgütlerde Yeni Nesil Liderlik Yaklaşımı</a>
-                <div class="article-author">Eren Odabaşı</div>
-                <div class="article-pages">Sayfa: 153–170</div>
-                <a class="pdf-link" href="https://dergipark.org.tr/tr/download/article-file/4980628" target="_blank">▶ PDF</a>
-              </div>
-            </div>
-
-            <div class="article-card">
-              <div class="article-num">3</div>
-              <div>
-                <div class="article-type">Araştırma Makalesi</div>
-                <a class="article-title" href="https://dergipark.org.tr/tr/pub/tws/article/1726757" target="_blank">Muharip Bir Kalem: Mareşal Fevzi Çakmak'ın Askerî Tarihçiliği</a>
-                <div class="article-author">Dindar Negiş</div>
-                <div class="article-pages">Sayfa: 171–187</div>
-                <a class="pdf-link" href="https://dergipark.org.tr/tr/download/article-file/4988963" target="_blank">▶ PDF</a>
-              </div>
-            </div>
-
-            <div class="article-card">
-              <div class="article-num">4</div>
-              <div>
-                <div class="article-type">Araştırma Makalesi</div>
-                <a class="article-title" href="https://dergipark.org.tr/tr/pub/tws/article/1767321" target="_blank">Biz Cümle Kırılmaya Muhtâcız Ki Siz Kal'aya Mâlik Olasız: Budin Kuşatması (1684)</a>
-                <div class="article-author">Emirhan Özçelik</div>
-                <div class="article-pages">Sayfa: 188–221</div>
-                <a class="pdf-link" href="https://dergipark.org.tr/tr/download/article-file/5163772" target="_blank">▶ PDF</a>
-              </div>
-            </div>
-
-            <div class="article-card">
-              <div class="article-num">5</div>
-              <div>
-                <div class="article-type">Araştırma Makalesi</div>
-                <a class="article-title" href="https://dergipark.org.tr/tr/pub/tws/article/1787356" target="_blank">Zengezur Koridoru'nun Orta Asya Türk Cumhuriyetleri'nin Enerji Güvenliği ve Bölgesel Çatışma Dinamiklerine Etkisi</a>
-                <div class="article-author">Erkan Özdemir</div>
-                <div class="article-pages">Sayfa: 222–251</div>
-                <a class="pdf-link" href="https://dergipark.org.tr/tr/download/article-file/5256914" target="_blank">▶ PDF</a>
-              </div>
-            </div>
-
-          </div>
-
-          <div id="tab-opinion" class="tab-pane">
-            <div class="article-card">
-              <div class="article-num">1</div>
-              <div>
-                <div class="article-type">Düşünce Yazısı</div>
-                <a class="article-title" href="https://dergipark.org.tr/tr/pub/tws/article/1706102" target="_blank">An Unforced Error: The Untold Story of the Suleymaniyah Hood Incident</a>
-                <div class="article-author">Edward J. Erickson</div>
-                <div class="article-pages">Sayfa: 109–123</div>
-                <a class="pdf-link" href="https://dergipark.org.tr/tr/download/article-file/4900811" target="_blank">▶ PDF</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Index Section -->
-        <div class="index-section">
-          <div class="section-label">Dizinler</div>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:0.5rem;">Türk Savaş Çalışmaları Dergisi aşağıdaki dizinlerde taranmaktadır:</p>
-          <div class="index-items">
-            <div class="index-item">ASOS Index</div>
-            <div class="index-item">Index Copernicus</div>
-            <div class="index-item">ESJ Index</div>
-            <div class="index-item">IdealOnline</div>
-            <div class="index-item">Crossref DOI</div>
-            <div class="index-item">DergiPark</div>
-          </div>
-        </div>
-
-      </div><!-- /main col -->
-
-      <!-- SIDEBAR -->
-      <aside class="sidebar">
-
-        <div class="widget">
-          <h3 class="widget-title">Dergi Bilgileri</h3>
-          <ul class="info-list">
-            <li><strong>e-ISSN</strong> 2717-7432</li>
-            <li><strong>Başlangıç</strong> 2020</li>
-            <li><strong>Periyot</strong> Yılda 2 Sayı</li>
-            <li><strong>Dil</strong> Türkçe, İngilizce</li>
-            <li><strong>Erişim</strong> Açık Erişim</li>
-            <li><strong>Ücret</strong> Ücretsiz</li>
-            <li><strong>Yayımcı</strong> Prof. Dr. Mesut UYAR</li>
-          </ul>
-        </div>
-
-        <div class="widget">
-          <h3 class="widget-title">Arşiv</h3>
-          <ul class="issue-list">
-            <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/92640" target="_blank">Cilt 6, Sayı 2</a><span class="year-badge">2025</span></li>
-            <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/91672" target="_blank">Cilt 6, Sayı 1</a><span class="year-badge">2025</span></li>
-            <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/87987" target="_blank">Cilt 5, Sayı 2</a><span class="year-badge">2024</span></li>
-            <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/84290" target="_blank">Cilt 5, Sayı 1</a><span class="year-badge">2024</span></li>
-            <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/80551" target="_blank">Cilt 4, Sayı 2</a><span class="year-badge">2023</span></li>
-            <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/77124" target="_blank">Cilt 4, Sayı 1</a><span class="year-badge">2023</span></li>
-            <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/73275" target="_blank">Cilt 3, Sayı 2</a><span class="year-badge">2022</span></li>
-            <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/69539" target="_blank">Cilt 3, Sayı 1</a><span class="year-badge">2022</span></li>
-            <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/65511" target="_blank">Cilt 2, Sayı 2</a><span class="year-badge">2021</span></li>
-            <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/62162" target="_blank">Cilt 2, Sayı 1</a><span class="year-badge">2021</span></li>
-            <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/57506" target="_blank">Cilt 1, Sayı 2</a><span class="year-badge">2020</span></li>
-            <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/53925" target="_blank">Cilt 1, Sayı 1</a><span class="year-badge">2020</span></li>
-          </ul>
-        </div>
-
-        <div class="widget">
-          <h3 class="widget-title">Hızlı Bağlantılar</h3>
-          <ul class="info-list">
-            <li><a href="#" onclick="showPage('makale')" style="color:var(--gold);font-weight:600;text-decoration:none;">→ Makale Gönder</a></li>
-            <li><a href="#" onclick="showPage('yayin')" style="color:var(--ink);text-decoration:none;">Yazım Kuralları</a></li>
-            <li><a href="#" onclick="showPage('etik')" style="color:var(--ink);text-decoration:none;">Etik İlkeler</a></li>
-            <li><a href="#" onclick="showPage('kurul')" style="color:var(--ink);text-decoration:none;">Dergi Kurulları</a></li>
-            <li><a href="#" onclick="showPage('iletisim')" style="color:var(--ink);text-decoration:none;">İletişim</a></li>
-          </ul>
-        </div>
-
-        <div class="widget">
-          <h3 class="widget-title">Lisans</h3>
-          <p style="font-size:12.5px;color:var(--muted);line-height:1.6;">Bu eser <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color:var(--gold);">Creative Commons Atıf-GayriTicari 4.0</a> Uluslararası Lisansı ile lisanslanmıştır.</p>
-        </div>
-
-      </aside>
-
-    </div><!-- /two-col -->
-  </div><!-- /container -->
-
-  <!-- Scope -->
-  <div class="scope-section">
-    <div class="container">
-      <div class="section-label">Amaç ve Kapsam</div>
-      <h2 class="section-title">Temel Araştırma Alanları</h2>
-      <div class="scope-grid">
-        <div class="scope-item">
-          <h4>Askeri Tarih</h4>
-          <p>Yakın çağ ve çağdaş askeri tarih, Osmanlı askeri tarihi, savaşların tarihsel analizi ve askeri kurumların evrimi.</p>
-        </div>
-        <div class="scope-item">
-          <h4>Siyasal Şiddetin Ekonomi Politiği</h4>
-          <p>Çatışmaların ekonomik temelleri, kaynak savaşları, silahlı şiddetin finansmanı ve sosyoekonomik boyutları.</p>
-        </div>
-        <div class="scope-item">
-          <h4>Jeopolitik ve Strateji</h4>
-          <p>Bölgesel ve küresel güç rekabeti, stratejik çalışmalar, uluslararası güvenlik ve savunma politikaları.</p>
-        </div>
-        <div class="scope-item">
-          <h4>Askeri Sosyoloji</h4>
-          <p>Toplum-ordu ilişkileri, silahlı kuvvetlerin sosyokültürel temelleri, çatışma ortamında toplumsal dinamikler.</p>
-        </div>
+  <div class="header-inner">
+    <div class="header-logo">
+      <img src="logo.png" alt="TJWS Amblemi">
+    </div>
+    <div>
+      <div class="header-eyebrow">Hakemli &middot; Bilimsel &middot; Uluslararası</div>
+      <div class="header-name-tr">Türk Savaş Çalışmaları Dergisi</div>
+      <h1 class="header-title">Turkish Journal of <span>War Studies</span></h1>
+      <div class="pills">
+        <span class="pill">Türkçe &amp; İngilizce</span>
+        <span class="pill">Açık Erişim</span>
+        <span class="pill">Crossref DOI</span>
+        <span class="pill">COPE Üyesi</span>
+        <span class="pill">iThenticate</span>
       </div>
     </div>
   </div>
+</header>
 
-</div><!-- /home page -->
+<nav>
+  <div class="nav-inner">
+    <img src="logo.png" alt="" class="nav-logo">
+    <a class="active" onclick="showPage('home')">Ana Sayfa</a>
+    <a onclick="showPage('arsiv')">Arşiv</a>
+    <a onclick="showPage('hakkinda')">Hakkında</a>
+    <a onclick="showPage('kurul')">Dergi Kurulları</a>
+    <a onclick="showPage('yayin')">Yazım Kuralları</a>
+    <a onclick="showPage('etik')">Etik İlkeler</a>
+    <a onclick="showPage('iletisim')">İletişim</a>
+  </div>
+</nav>
 
+<div class="announce">✦ &nbsp; TJWS makale gönderim, değerlendirme ve yayım süreçlerinin hiçbirisinde <strong>herhangi bir ücret talep edilmemektedir</strong>. &nbsp; ✦</div>
 
-<!-- ═══ ARŞİV PAGE ═══ -->
+<main>
+
+<!-- HOME -->
+<div id="page-home" class="page-section active">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="about-card">
+          <h2>Dergi Hakkında</h2>
+          <p>Yayın hayatına 2020 yılında başlayan <strong>Turkish Journal of War Studies</strong> (Türk Savaş Çalışmaları Dergisi), silahlı çatışma ve savaş kavramının nedenleri, temel dinamikleri ve ulusal-uluslararası boyutları konularında bilimsel yayınlara yer veren hakemli bir akademik dergidir.</p>
+          <p>Derginin temel alanlarını askeri tarih, siyasal şiddetin ekonomi politiği ve sosyokültürel temelleri, jeopolitik ve askeri sosyoloji oluşturmakta; savaş ve çatışma ile ilintili diğer alan çalışmaları da değerlendirilmektedir.</p>
+          <p>Ulusal alandaki boşluğun nitelikli çalışmalarla doldurulması ve Türk savaş çalışmalarının uluslararası literatüre kazandırılması temel hedefler arasındadır. Dergi yılda iki sayı, Türkçe ve İngilizce dillerinde yayımlanmaktadır.</p>
+          <div class="about-hi">Tüm makaleler <strong>iThenticate</strong> ile intihal açısından taranmakta; <strong>Budapeşte Açık Erişim Girişimi</strong> ve <strong>COPE</strong> Davranış Kuralları esas alınmaktadır.</div>
+        </div>
+
+        <div class="lbl">Güncel Sayı</div>
+        <div class="issue-hdr">
+          <span class="issue-t">Cilt 6, Sayı 2</span>
+          <span class="issue-d">Ekim 2025</span>
+        </div>
+        <div class="tab-nav">
+          <button class="tab-btn active" onclick="switchTab(this,'tab-r')">Araştırma Makaleleri</button>
+          <button class="tab-btn" onclick="switchTab(this,'tab-o')">Düşünce Yazıları</button>
+        </div>
+        <div id="tab-r" class="tab-pane active">
+          <div class="art-card"><div class="art-num">01</div><div><div class="art-badge">Araştırma Makalesi</div><a class="art-title" href="https://dergipark.org.tr/tr/pub/tws/article/1794848" target="_blank">Askeri Cesaretin Evrimi</a><div class="art-author">İbrahim Sani Mert</div><div class="art-pages">Sayfa 132–152</div><a class="pdf-btn" href="https://dergipark.org.tr/tr/download/article-file/5290932" target="_blank">▶ PDF İndir</a></div></div>
+          <div class="art-card"><div class="art-num">02</div><div><div class="art-badge">Araştırma Makalesi</div><a class="art-title" href="https://dergipark.org.tr/tr/pub/tws/article/1724692" target="_blank">Hibrit Liderlik: Askeri Örgütlerde Yeni Nesil Liderlik Yaklaşımı</a><div class="art-author">Eren Odabaşı</div><div class="art-pages">Sayfa 153–170</div><a class="pdf-btn" href="https://dergipark.org.tr/tr/download/article-file/4980628" target="_blank">▶ PDF İndir</a></div></div>
+          <div class="art-card"><div class="art-num">03</div><div><div class="art-badge">Araştırma Makalesi</div><a class="art-title" href="https://dergipark.org.tr/tr/pub/tws/article/1726757" target="_blank">Muharip Bir Kalem: Mareşal Fevzi Çakmak'ın Askerî Tarihçiliği</a><div class="art-author">Dindar Negiş</div><div class="art-pages">Sayfa 171–187</div><a class="pdf-btn" href="https://dergipark.org.tr/tr/download/article-file/4988963" target="_blank">▶ PDF İndir</a></div></div>
+          <div class="art-card"><div class="art-num">04</div><div><div class="art-badge">Araştırma Makalesi</div><a class="art-title" href="https://dergipark.org.tr/tr/pub/tws/article/1767321" target="_blank">Biz Cümle Kırılmaya Muhtâcız Ki Siz Kal'aya Mâlik Olasız: Budin Kuşatması (1684)</a><div class="art-author">Emirhan Özçelik</div><div class="art-pages">Sayfa 188–221</div><a class="pdf-btn" href="https://dergipark.org.tr/tr/download/article-file/5163772" target="_blank">▶ PDF İndir</a></div></div>
+          <div class="art-card"><div class="art-num">05</div><div><div class="art-badge">Araştırma Makalesi</div><a class="art-title" href="https://dergipark.org.tr/tr/pub/tws/article/1787356" target="_blank">Zengezur Koridoru'nun Orta Asya Türk Cumhuriyetleri'nin Enerji Güvenliği ve Bölgesel Çatışma Dinamiklerine Etkisi</a><div class="art-author">Erkan Özdemir</div><div class="art-pages">Sayfa 222–251</div><a class="pdf-btn" href="https://dergipark.org.tr/tr/download/article-file/5256914" target="_blank">▶ PDF İndir</a></div></div>
+        </div>
+        <div id="tab-o" class="tab-pane">
+          <div class="art-card"><div class="art-num">01</div><div><div class="art-badge">Düşünce Yazısı</div><a class="art-title" href="https://dergipark.org.tr/tr/pub/tws/article/1706102" target="_blank">An Unforced Error: The Untold Story of the Suleymaniyah Hood Incident</a><div class="art-author">Edward J. Erickson</div><div class="art-pages">Sayfa 109–123</div><a class="pdf-btn" href="https://dergipark.org.tr/tr/download/article-file/4900811" target="_blank">▶ PDF İndir</a></div></div>
+        </div>
+
+        <div class="idx-sec">
+          <div class="lbl">Taranılan Dizinler</div>
+          <div class="idx-items">
+            <div class="idx-item">ASOS Index</div><div class="idx-item">Index Copernicus</div><div class="idx-item">ESJ Index</div><div class="idx-item">IdealOnline</div><div class="idx-item">Crossref DOI</div><div class="idx-item">DergiPark</div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="widget">
+          <div class="w-head">Dergi Bilgileri</div>
+          <div class="w-body"><dl>
+            <div class="info-row"><dt>e-ISSN</dt><dd>2717-7432</dd></div>
+            <div class="info-row"><dt>Başlangıç</dt><dd>2020</dd></div>
+            <div class="info-row"><dt>Periyot</dt><dd>Yılda 2 Sayı</dd></div>
+            <div class="info-row"><dt>Dil</dt><dd>Türkçe, İngilizce</dd></div>
+            <div class="info-row"><dt>Erişim</dt><dd>Açık Erişim</dd></div>
+            <div class="info-row"><dt>Ücret</dt><dd>Ücretsiz</dd></div>
+            <div class="info-row"><dt>Yayımcı</dt><dd>Prof. Dr. Mesut UYAR</dd></div>
+          </dl></div>
+        </div>
+        <div class="widget">
+          <div class="w-head">Son Sayılar</div>
+          <div class="w-body">
+            <ul class="issue-list">
+              <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/92640" target="_blank">Cilt 6, Sayı 2</a><span class="yr">2025</span></li>
+              <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/91672" target="_blank">Cilt 6, Sayı 1</a><span class="yr">2025</span></li>
+              <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/87987" target="_blank">Cilt 5, Sayı 2</a><span class="yr">2024</span></li>
+              <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/84290" target="_blank">Cilt 5, Sayı 1</a><span class="yr">2024</span></li>
+              <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/80551" target="_blank">Cilt 4, Sayı 2</a><span class="yr">2023</span></li>
+              <li><a href="https://dergipark.org.tr/tr/pub/tws/issue/77124" target="_blank">Cilt 4, Sayı 1</a><span class="yr">2023</span></li>
+              <li><a onclick="showPage('arsiv')" style="color:var(--teal);font-family:var(--font-h);font-size:11.5px;font-weight:700;cursor:pointer;">Tüm arşivi gör →</a><span></span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="widget">
+          <div class="w-head">Hızlı Erişim</div>
+          <div class="w-body" style="padding:.5rem 1rem;">
+            <a class="ql primary" onclick="showPage('makale')">Makale Gönder</a>
+            <a class="ql" onclick="showPage('yayin')">Yazım Kuralları</a>
+            <a class="ql" onclick="showPage('etik')">Etik İlkeler</a>
+            <a class="ql" onclick="showPage('kurul')">Dergi Kurulları</a>
+            <a class="ql" onclick="showPage('iletisim')">İletişim</a>
+          </div>
+        </div>
+        <div class="widget">
+          <div class="w-head">Lisans</div>
+          <div class="w-body">
+            <p style="font-size:12.5px;color:var(--slate);line-height:1.6;">Bu eser <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color:var(--teal);">Creative Commons BY-NC 4.0</a> lisansı ile lisanslanmıştır.</p>
+            <img src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" alt="CC BY-NC 4.0" style="margin-top:.75rem;">
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="scope">
+    <div class="container">
+      <div class="lbl">Kapsam</div>
+      <h2 class="sec-title">Temel Araştırma Alanları</h2>
+      <div class="scope-grid">
+        <div class="scope-item"><span class="scope-ico">⚔️</span><h4>Askeri Tarih</h4><p>Yakın çağ ve çağdaş askeri tarih, Osmanlı askeri tarihi ve savaşların tarihsel analizi.</p></div>
+        <div class="scope-item"><span class="scope-ico">📊</span><h4>Siyasal Şiddetin Ekonomi Politiği</h4><p>Çatışmaların ekonomik temelleri, kaynak savaşları ve silahlı şiddetin finansmanı.</p></div>
+        <div class="scope-item"><span class="scope-ico">🌐</span><h4>Jeopolitik ve Strateji</h4><p>Bölgesel güç rekabeti, stratejik çalışmalar, uluslararası güvenlik ve savunma politikaları.</p></div>
+        <div class="scope-item"><span class="scope-ico">🎖️</span><h4>Askeri Sosyoloji</h4><p>Toplum-ordu ilişkileri, silahlı kuvvetlerin sosyokültürel temelleri ve toplumsal dinamikler.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ARŞİV -->
 <div id="page-arsiv" class="page-section">
   <div class="container" style="padding-top:3rem;padding-bottom:4rem;">
-    <div class="section-label">Tüm Yayınlar</div>
-    <h2 class="section-title">Arşiv</h2>
-
-    <table style="width:100%;border-collapse:collapse;font-family:'EB Garamond',serif;">
-      <thead>
-        <tr style="background:var(--deep);color:var(--parchment);">
-          <th style="padding:0.75rem 1rem;text-align:left;font-size:12px;letter-spacing:0.1em;font-family:'Source Sans 3',sans-serif;font-weight:600;">YIL</th>
-          <th style="padding:0.75rem 1rem;text-align:left;font-size:12px;letter-spacing:0.1em;font-family:'Source Sans 3',sans-serif;font-weight:600;">CİLT / SAYI</th>
-          <th style="padding:0.75rem 1rem;text-align:left;font-size:12px;letter-spacing:0.1em;font-family:'Source Sans 3',sans-serif;font-weight:600;">TARİH</th>
-          <th style="padding:0.75rem 1rem;text-align:left;font-size:12px;letter-spacing:0.1em;font-family:'Source Sans 3',sans-serif;font-weight:600;">ERİŞİM</th>
-        </tr>
-      </thead>
+    <div class="lbl">Tüm Yayınlar</div>
+    <h2 class="sec-title" style="margin-top:.4rem;">Arşiv</h2>
+    <table class="arc-table">
+      <thead><tr><th>Yıl</th><th>Cilt / Sayı</th><th>Yayın Tarihi</th><th>Erişim</th></tr></thead>
       <tbody>
-        <tr style="background:#fff;">
-          <td rowspan="2" style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:18px;vertical-align:top;color:var(--gold);font-weight:600;">2025</td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:17px;"><a href="https://dergipark.org.tr/tr/pub/tws/issue/92640" target="_blank" style="color:var(--ink);text-decoration:none;">Cilt 6, Sayı 2</a></td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:14px;color:var(--muted);">31.10.2025</td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);"><a href="https://dergipark.org.tr/tr/pub/tws/issue/92640" target="_blank" class="pdf-link">Görüntüle</a></td>
-        </tr>
-        <tr style="background:#faf7f2;">
-          <td style="padding:0.75rem 1rem;border-bottom:2px solid var(--rule);font-size:17px;"><a href="https://dergipark.org.tr/tr/pub/tws/issue/91672" target="_blank" style="color:var(--ink);text-decoration:none;">Cilt 6, Sayı 1</a></td>
-          <td style="padding:0.75rem 1rem;border-bottom:2px solid var(--rule);font-size:14px;color:var(--muted);">30.04.2025</td>
-          <td style="padding:0.75rem 1rem;border-bottom:2px solid var(--rule);"><a href="https://dergipark.org.tr/tr/pub/tws/issue/91672" target="_blank" class="pdf-link">Görüntüle</a></td>
-        </tr>
-        <tr style="background:#fff;">
-          <td rowspan="2" style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:18px;vertical-align:top;color:var(--gold);font-weight:600;">2024</td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:17px;"><a href="https://dergipark.org.tr/tr/pub/tws/issue/87987" target="_blank" style="color:var(--ink);text-decoration:none;">Cilt 5, Sayı 2</a></td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:14px;color:var(--muted);">01.11.2024</td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);"><a href="https://dergipark.org.tr/tr/pub/tws/issue/87987" target="_blank" class="pdf-link">Görüntüle</a></td>
-        </tr>
-        <tr style="background:#faf7f2;">
-          <td style="padding:0.75rem 1rem;border-bottom:2px solid var(--rule);font-size:17px;"><a href="https://dergipark.org.tr/tr/pub/tws/issue/84290" target="_blank" style="color:var(--ink);text-decoration:none;">Cilt 5, Sayı 1</a></td>
-          <td style="padding:0.75rem 1rem;border-bottom:2px solid var(--rule);font-size:14px;color:var(--muted);">30.04.2024</td>
-          <td style="padding:0.75rem 1rem;border-bottom:2px solid var(--rule);"><a href="https://dergipark.org.tr/tr/pub/tws/issue/84290" target="_blank" class="pdf-link">Görüntüle</a></td>
-        </tr>
-        <tr style="background:#fff;">
-          <td rowspan="2" style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:18px;vertical-align:top;color:var(--gold);font-weight:600;">2023</td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:17px;"><a href="https://dergipark.org.tr/tr/pub/tws/issue/80551" target="_blank" style="color:var(--ink);text-decoration:none;">Cilt 4, Sayı 2</a></td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:14px;color:var(--muted);">30.10.2023</td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);"><a href="https://dergipark.org.tr/tr/pub/tws/issue/80551" target="_blank" class="pdf-link">Görüntüle</a></td>
-        </tr>
-        <tr style="background:#faf7f2;">
-          <td style="padding:0.75rem 1rem;border-bottom:2px solid var(--rule);font-size:17px;"><a href="https://dergipark.org.tr/tr/pub/tws/issue/77124" target="_blank" style="color:var(--ink);text-decoration:none;">Cilt 4, Sayı 1</a></td>
-          <td style="padding:0.75rem 1rem;border-bottom:2px solid var(--rule);font-size:14px;color:var(--muted);">30.04.2023</td>
-          <td style="padding:0.75rem 1rem;border-bottom:2px solid var(--rule);"><a href="https://dergipark.org.tr/tr/pub/tws/issue/77124" target="_blank" class="pdf-link">Görüntüle</a></td>
-        </tr>
-        <tr style="background:#fff;">
-          <td rowspan="2" style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:18px;vertical-align:top;color:var(--gold);font-weight:600;">2022</td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:17px;"><a href="https://dergipark.org.tr/tr/pub/tws/issue/73275" target="_blank" style="color:var(--ink);text-decoration:none;">Cilt 3, Sayı 2</a></td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:14px;color:var(--muted);">30.10.2022</td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);"><a href="https://dergipark.org.tr/tr/pub/tws/issue/73275" target="_blank" class="pdf-link">Görüntüle</a></td>
-        </tr>
-        <tr style="background:#faf7f2;">
-          <td style="padding:0.75rem 1rem;border-bottom:2px solid var(--rule);font-size:17px;"><a href="https://dergipark.org.tr/tr/pub/tws/issue/69539" target="_blank" style="color:var(--ink);text-decoration:none;">Cilt 3, Sayı 1</a></td>
-          <td style="padding:0.75rem 1rem;border-bottom:2px solid var(--rule);font-size:14px;color:var(--muted);">30.04.2022</td>
-          <td style="padding:0.75rem 1rem;border-bottom:2px solid var(--rule);"><a href="https://dergipark.org.tr/tr/pub/tws/issue/69539" target="_blank" class="pdf-link">Görüntüle</a></td>
-        </tr>
-        <tr style="background:#fff;">
-          <td rowspan="2" style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:18px;vertical-align:top;color:var(--gold);font-weight:600;">2021</td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:17px;"><a href="https://dergipark.org.tr/tr/pub/tws/issue/65511" target="_blank" style="color:var(--ink);text-decoration:none;">Cilt 2, Sayı 2</a></td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:14px;color:var(--muted);">25.10.2021</td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);"><a href="https://dergipark.org.tr/tr/pub/tws/issue/65511" target="_blank" class="pdf-link">Görüntüle</a></td>
-        </tr>
-        <tr style="background:#faf7f2;">
-          <td style="padding:0.75rem 1rem;border-bottom:2px solid var(--rule);font-size:17px;"><a href="https://dergipark.org.tr/tr/pub/tws/issue/62162" target="_blank" style="color:var(--ink);text-decoration:none;">Cilt 2, Sayı 1</a></td>
-          <td style="padding:0.75rem 1rem;border-bottom:2px solid var(--rule);font-size:14px;color:var(--muted);">30.04.2021</td>
-          <td style="padding:0.75rem 1rem;border-bottom:2px solid var(--rule);"><a href="https://dergipark.org.tr/tr/pub/tws/issue/62162" target="_blank" class="pdf-link">Görüntüle</a></td>
-        </tr>
-        <tr style="background:#fff;">
-          <td rowspan="2" style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:18px;vertical-align:top;color:var(--gold);font-weight:600;">2020</td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:17px;"><a href="https://dergipark.org.tr/tr/pub/tws/issue/57506" target="_blank" style="color:var(--ink);text-decoration:none;">Cilt 1, Sayı 2</a></td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);font-size:14px;color:var(--muted);">31.10.2020</td>
-          <td style="padding:0.75rem 1rem;border-bottom:1px solid var(--rule);"><a href="https://dergipark.org.tr/tr/pub/tws/issue/57506" target="_blank" class="pdf-link">Görüntüle</a></td>
-        </tr>
-        <tr style="background:#faf7f2;">
-          <td style="padding:0.75rem 1rem;font-size:17px;"><a href="https://dergipark.org.tr/tr/pub/tws/issue/53925" target="_blank" style="color:var(--ink);text-decoration:none;">Cilt 1, Sayı 1</a></td>
-          <td style="padding:0.75rem 1rem;font-size:14px;color:var(--muted);">27.04.2020</td>
-          <td style="padding:0.75rem 1rem;"><a href="https://dergipark.org.tr/tr/pub/tws/issue/53925" target="_blank" class="pdf-link">Görüntüle</a></td>
-        </tr>
+        <tr><td class="y-cell" rowspan="2">2025</td><td><a class="v-cell" href="https://dergipark.org.tr/tr/pub/tws/issue/92640" target="_blank">Cilt 6, Sayı 2</a></td><td class="d-cell">31.10.2025</td><td><a href="https://dergipark.org.tr/tr/pub/tws/issue/92640" target="_blank" class="pdf-btn">Görüntüle</a></td></tr>
+        <tr><td><a class="v-cell" href="https://dergipark.org.tr/tr/pub/tws/issue/91672" target="_blank">Cilt 6, Sayı 1</a></td><td class="d-cell">30.04.2025</td><td><a href="https://dergipark.org.tr/tr/pub/tws/issue/91672" target="_blank" class="pdf-btn">Görüntüle</a></td></tr>
+        <tr><td class="y-cell" rowspan="2">2024</td><td><a class="v-cell" href="https://dergipark.org.tr/tr/pub/tws/issue/87987" target="_blank">Cilt 5, Sayı 2</a></td><td class="d-cell">01.11.2024</td><td><a href="https://dergipark.org.tr/tr/pub/tws/issue/87987" target="_blank" class="pdf-btn">Görüntüle</a></td></tr>
+        <tr><td><a class="v-cell" href="https://dergipark.org.tr/tr/pub/tws/issue/84290" target="_blank">Cilt 5, Sayı 1</a></td><td class="d-cell">30.04.2024</td><td><a href="https://dergipark.org.tr/tr/pub/tws/issue/84290" target="_blank" class="pdf-btn">Görüntüle</a></td></tr>
+        <tr><td class="y-cell" rowspan="2">2023</td><td><a class="v-cell" href="https://dergipark.org.tr/tr/pub/tws/issue/80551" target="_blank">Cilt 4, Sayı 2</a></td><td class="d-cell">30.10.2023</td><td><a href="https://dergipark.org.tr/tr/pub/tws/issue/80551" target="_blank" class="pdf-btn">Görüntüle</a></td></tr>
+        <tr><td><a class="v-cell" href="https://dergipark.org.tr/tr/pub/tws/issue/77124" target="_blank">Cilt 4, Sayı 1</a></td><td class="d-cell">30.04.2023</td><td><a href="https://dergipark.org.tr/tr/pub/tws/issue/77124" target="_blank" class="pdf-btn">Görüntüle</a></td></tr>
+        <tr><td class="y-cell" rowspan="2">2022</td><td><a class="v-cell" href="https://dergipark.org.tr/tr/pub/tws/issue/73275" target="_blank">Cilt 3, Sayı 2</a></td><td class="d-cell">30.10.2022</td><td><a href="https://dergipark.org.tr/tr/pub/tws/issue/73275" target="_blank" class="pdf-btn">Görüntüle</a></td></tr>
+        <tr><td><a class="v-cell" href="https://dergipark.org.tr/tr/pub/tws/issue/69539" target="_blank">Cilt 3, Sayı 1</a></td><td class="d-cell">30.04.2022</td><td><a href="https://dergipark.org.tr/tr/pub/tws/issue/69539" target="_blank" class="pdf-btn">Görüntüle</a></td></tr>
+        <tr><td class="y-cell" rowspan="2">2021</td><td><a class="v-cell" href="https://dergipark.org.tr/tr/pub/tws/issue/65511" target="_blank">Cilt 2, Sayı 2</a></td><td class="d-cell">25.10.2021</td><td><a href="https://dergipark.org.tr/tr/pub/tws/issue/65511" target="_blank" class="pdf-btn">Görüntüle</a></td></tr>
+        <tr><td><a class="v-cell" href="https://dergipark.org.tr/tr/pub/tws/issue/62162" target="_blank">Cilt 2, Sayı 1</a></td><td class="d-cell">30.04.2021</td><td><a href="https://dergipark.org.tr/tr/pub/tws/issue/62162" target="_blank" class="pdf-btn">Görüntüle</a></td></tr>
+        <tr><td class="y-cell" rowspan="2">2020</td><td><a class="v-cell" href="https://dergipark.org.tr/tr/pub/tws/issue/57506" target="_blank">Cilt 1, Sayı 2</a></td><td class="d-cell">31.10.2020</td><td><a href="https://dergipark.org.tr/tr/pub/tws/issue/57506" target="_blank" class="pdf-btn">Görüntüle</a></td></tr>
+        <tr><td><a class="v-cell" href="https://dergipark.org.tr/tr/pub/tws/issue/53925" target="_blank">Cilt 1, Sayı 1</a></td><td class="d-cell">27.04.2020</td><td><a href="https://dergipark.org.tr/tr/pub/tws/issue/53925" target="_blank" class="pdf-btn">Görüntüle</a></td></tr>
       </tbody>
     </table>
   </div>
 </div>
 
-
-<!-- ═══ HAKKINDA ═══ -->
+<!-- HAKKINDA -->
 <div id="page-hakkinda" class="page-section">
-  <div class="container" style="padding-top:3rem;padding-bottom:4rem;">
-    <div class="section-label">Dergi</div>
-    <h2 class="section-title">Hakkında</h2>
-    <div class="policy-content">
-      <p>Yayın hayatına 2020 yılında başlayan <strong>Turkish Journal of War Studies</strong> (Türk Savaş Çalışmaları Dergisi) silahlı çatışma ve savaş kavramının nedenleri, temel dinamikleri ve ulusal ve uluslararası boyutları gibi konu başlıklarında bilimsel yayınlara yer veren hakemli bir akademik dergidir.</p>
+  <div class="container">
+    <div class="lbl" style="padding-top:3rem;">Dergi</div>
+    <h2 class="sec-title" style="margin-top:.4rem;">Hakkında</h2>
+    <div class="policy">
+      <p>Yayın hayatına 2020 yılında başlayan <strong>Turkish Journal of War Studies</strong> (Türk Savaş Çalışmaları Dergisi), silahlı çatışma ve savaş kavramının nedenleri, temel dinamikleri ve ulusal-uluslararası boyutları konularında bilimsel yayınlara yer veren hakemli bir akademik dergidir.</p>
       <h3>Amaç ve Kapsam</h3>
-      <p>Derginin temel alanlarını askeri tarih, siyasal şiddetin ekonomi politiği ve sosyokültürel temelleri, jeopolitik ve askeri sosyoloji gibi konular oluşturmakla birlikte savaş ve çatışma ile ilintili diğer alan çalışmaları da dikkate alınmaktadır.</p>
-      <p>Uluslararası alanda savaş çalışmaları üzerine geniş bir literatür bulunmasına karşın, ulusal alanda var olan boşluğun nitelikli akademik çalışmalarla doldurulması hedeflenmektedir. Türk savaş çalışmalarının uluslararası literatüre kazandırılması da diğer bir önemli katkı olarak değerlendirilmektedir.</p>
+      <p>Derginin temel alanlarını askeri tarih, siyasal şiddetin ekonomi politiği ve sosyokültürel temelleri, jeopolitik ve askeri sosyoloji gibi konular oluşturmakta; savaş ve çatışma ile ilintili diğer alan çalışmaları da dikkate alınmaktadır.</p>
       <h3>Yayın Periyodu</h3>
-      <p>Dergi yılda iki sayı olarak yayımlanmakta olup, Türkçe ve İngilizce dillerinde çalışmalar kabul edilmektedir.</p>
+      <p>Dergi yılda iki sayı olarak yayımlanmakta olup Türkçe ve İngilizce dillerinde çalışmalar kabul edilmektedir.</p>
       <h3>Ücret Politikası</h3>
       <p>TJWS makale gönderim, değerlendirme ve yayım süreçlerinin hiçbirisinde herhangi bir ücret talep etmemektedir.</p>
-      <h3>İntihal ve Benzerlik Kontrolü</h3>
-      <p>TJWS'ye gönderilen tüm makaleler <strong>iThenticate</strong> programı tarafından kontrol edilir. Açıkça intihal belirtileri gösteren herhangi bir makale otomatik olarak reddedilir.</p>
+      <h3>İntihal Kontrolü</h3>
+      <p>Gönderilen tüm makaleler iThenticate programı ile taranmakta; intihal tespit edilenleri otomatik olarak reddedilmektedir.</p>
       <h3>Açık Erişim</h3>
-      <p>Bu dergide Budapeşte Açık Erişim Girişiminin tanımlaması kabul edilmektedir. Bu Dergi Yayıncılık Etiği Kurulu (COPE) tarafından hazırlanan Davranış Kurallarını esas almaktadır.</p>
+      <p>Budapeşte Açık Erişim Girişiminin tanımlaması ve COPE Davranış Kuralları esas alınmaktadır.</p>
     </div>
   </div>
 </div>
 
-
-<!-- ═══ KURUL ═══ -->
+<!-- KURUL -->
 <div id="page-kurul" class="page-section">
-  <div class="container" style="padding-top:3rem;padding-bottom:4rem;">
-    <div class="section-label">Dergi</div>
-    <h2 class="section-title">Dergi Kurulları</h2>
-
-    <div class="board-section" style="border-top:none;padding-top:0;">
-      <h3 class="board-section-title">Editör Kurulu</h3>
-      <p class="board-section-sub">Son Güncelleme: 1 Kasım 2025</p>
-      <div class="board-grid">
-        <div class="board-card">
-          <div class="board-card-rank">Editör · Prof. Dr.</div>
-          <div class="board-card-name">Mesut UYAR</div>
-          <div class="board-card-inst">University of New South Wales, Canberra</div>
-          <div class="board-card-area">Uluslararası İlişkiler, Uluslararası Güvenlik, Yakınçağ Askeri Tarih, Osmanlı Tarihi, Strateji</div>
-        </div>
-        <div class="board-card">
-          <div class="board-card-rank">Editör · Doç. Dr.</div>
-          <div class="board-card-name">Emrah ÖZDEMİR</div>
-          <div class="board-card-inst">Milli Savunma Üniversitesi, Kara Harp Okulu, Uluslararası İlişkiler Bölümü</div>
-          <div class="board-card-area">Savaş Çalışmaları</div>
-        </div>
-        <div class="board-card">
-          <div class="board-card-rank">Editör · Dr. Öğr. Üyesi</div>
-          <div class="board-card-name">Mehmet Fatih BAŞ</div>
-          <div class="board-card-inst">Milli Savunma Üniversitesi, Kara Harp Enstitüsü</div>
-          <div class="board-card-area">Türkiye Cumhuriyeti Tarihi, Yakınçağ Askeri Tarih, Osmanlı Tarihi</div>
-        </div>
-        <div class="board-card">
-          <div class="board-card-rank">Editör</div>
-          <div class="board-card-name">Hakan Kerim ÇİVİ</div>
-          <div class="board-card-inst">Milli Savunma Üniversitesi, Alparslan Savunma Bilimleri Enstitüsü</div>
-          <div class="board-card-area">Çağdaş Askeri Tarih</div>
-        </div>
-        <div class="board-card">
-          <div class="board-card-rank">Editör · Dr.</div>
-          <div class="board-card-name">Ömer Furkan DEMİRCİ</div>
-          <div class="board-card-inst">Milli Savunma Üniversitesi, Kara Harp Okulu, Savaş Araştırmaları ABD</div>
-          <div class="board-card-area">Savaş Çalışmaları</div>
-        </div>
-      </div>
+  <div class="container" style="padding-bottom:4rem;">
+    <div class="lbl" style="padding-top:3rem;">Dergi</div>
+    <h2 class="sec-title" style="margin-top:.4rem;">Dergi Kurulları</h2>
+    <div class="bsec-hdr"><h3>Editör Kurulu</h3><span class="cnt">5 Üye</span></div>
+    <p class="bsec-sub">Son güncelleme: 1 Kasım 2025</p>
+    <div class="board-grid">
+      <div class="b-card"><div class="b-rank">Editör · Prof. Dr.</div><div class="b-name">Mesut UYAR</div><div class="b-inst">University of New South Wales, Canberra</div><div class="b-area">Uluslararası İlişkiler, Uluslararası Güvenlik, Yakınçağ Askeri Tarih, Osmanlı Tarihi, Strateji</div></div>
+      <div class="b-card"><div class="b-rank">Editör · Doç. Dr.</div><div class="b-name">Emrah ÖZDEMİR</div><div class="b-inst">Milli Savunma Üniversitesi, Kara Harp Okulu</div><div class="b-area">Savaş Çalışmaları</div></div>
+      <div class="b-card"><div class="b-rank">Editör · Dr. Öğr. Üyesi</div><div class="b-name">Mehmet Fatih BAŞ</div><div class="b-inst">Milli Savunma Üniversitesi, Kara Harp Enstitüsü</div><div class="b-area">Türkiye Cumhuriyeti Tarihi, Yakınçağ Askeri Tarih, Osmanlı Tarihi</div></div>
+      <div class="b-card"><div class="b-rank">Editör</div><div class="b-name">Hakan Kerim ÇİVİ</div><div class="b-inst">Milli Savunma Üniversitesi, Alparslan Savunma Bilimleri Enstitüsü</div><div class="b-area">Çağdaş Askeri Tarih</div></div>
+      <div class="b-card"><div class="b-rank">Editör · Dr.</div><div class="b-name">Ömer Furkan DEMİRCİ</div><div class="b-inst">Milli Savunma Üniversitesi, Kara Harp Okulu</div><div class="b-area">Savaş Çalışmaları</div></div>
     </div>
-
-    <div class="board-section">
-      <h3 class="board-section-title">Danışma Kurulu</h3>
-      <p class="board-section-sub">Uluslararası ve ulusal akademisyenlerden oluşan danışma kurulumuz</p>
-      <div class="board-grid">
-        <div class="board-card">
-          <div class="board-card-rank">Prof. Dr.</div>
-          <div class="board-card-name">Serhat GÜVENÇ</div>
-          <div class="board-card-inst">Kadir Has Üniversitesi</div>
-          <div class="board-card-area">Güvenlik Çalışmaları, Savaş Çalışmaları</div>
-        </div>
-        <div class="board-card">
-          <div class="board-card-rank">Prof. Dr.</div>
-          <div class="board-card-name">Abdülkadir VAROĞLU</div>
-          <div class="board-card-inst">Başkent Üniversitesi</div>
-          <div class="board-card-area">Girişimcilik, Strateji</div>
-        </div>
-        <div class="board-card">
-          <div class="board-card-rank">Prof. Dr.</div>
-          <div class="board-card-name">Gültekin YILDIZ</div>
-          <div class="board-card-inst">İstanbul Üniversitesi</div>
-          <div class="board-card-area">Güvenlik Çalışmaları</div>
-        </div>
-        <div class="board-card">
-          <div class="board-card-rank">Prof. Dr.</div>
-          <div class="board-card-name">Fatih YEŞİL</div>
-          <div class="board-card-inst">Hacettepe Üniversitesi</div>
-          <div class="board-card-area">Yakınçağ Yenileşme Tarihi</div>
-        </div>
-        <div class="board-card">
-          <div class="board-card-rank">Prof. Dr.</div>
-          <div class="board-card-name">Ahmet ÖZCAN</div>
-          <div class="board-card-inst">Milli Savunma Üniversitesi</div>
-          <div class="board-card-area">Yakınçağ Askeri Tarih, Yakınçağ Yenileşme Tarihi</div>
-        </div>
-        <div class="board-card">
-          <div class="board-card-rank">Doç. Dr.</div>
-          <div class="board-card-name">Bülent DURGUN</div>
-          <div class="board-card-inst">Istanbul Arel University</div>
-          <div class="board-card-area">Uluslararası İlişkiler, Çağdaş Balkan Tarihi, Yakınçağ Askeri Tarih</div>
-        </div>
-        <div class="board-card">
-          <div class="board-card-rank">Doç. Dr.</div>
-          <div class="board-card-name">Barış ATEŞ</div>
-          <div class="board-card-inst">Milli Savunma Üniversitesi, Atatürk Stratejik Araştırmalar Enstitüsü</div>
-          <div class="board-card-area">Askeri Sosyoloji, Savunma Çalışmaları, Savaş Çalışmaları</div>
-        </div>
-        <div class="board-card">
-          <div class="board-card-rank">Prof. Dr.</div>
-          <div class="board-card-name">Edward J. ERİCKSON</div>
-          <div class="board-card-inst">Bağımsız Araştırmacı</div>
-          <div class="board-card-area">Çağdaş ve Yakınçağ Askeri Tarih</div>
-        </div>
-        <div class="board-card">
-          <div class="board-card-rank">Doç. Dr.</div>
-          <div class="board-card-name">Sadık Emre KARAKUŞ</div>
-          <div class="board-card-inst">Milli Savunma Üniversitesi</div>
-          <div class="board-card-area">Osmanlı Sosyoekonomik Tarihi, Yakınçağ Askeri Tarih, Yakınçağ Kent Tarihi</div>
-        </div>
-      </div>
+    <div class="bsec-hdr"><h3>Danışma Kurulu</h3><span class="cnt">9 Üye</span></div>
+    <p class="bsec-sub">Ulusal ve uluslararası akademisyenlerden oluşmaktadır</p>
+    <div class="board-grid">
+      <div class="b-card"><div class="b-rank">Prof. Dr.</div><div class="b-name">Serhat GÜVENÇ</div><div class="b-inst">Kadir Has Üniversitesi</div><div class="b-area">Güvenlik Çalışmaları, Savaş Çalışmaları</div></div>
+      <div class="b-card"><div class="b-rank">Prof. Dr.</div><div class="b-name">Abdülkadir VAROĞLU</div><div class="b-inst">Başkent Üniversitesi</div><div class="b-area">Girişimcilik, Strateji</div></div>
+      <div class="b-card"><div class="b-rank">Prof. Dr.</div><div class="b-name">Gültekin YILDIZ</div><div class="b-inst">İstanbul Üniversitesi</div><div class="b-area">Güvenlik Çalışmaları</div></div>
+      <div class="b-card"><div class="b-rank">Prof. Dr.</div><div class="b-name">Fatih YEŞİL</div><div class="b-inst">Hacettepe Üniversitesi</div><div class="b-area">Yakınçağ Yenileşme Tarihi</div></div>
+      <div class="b-card"><div class="b-rank">Prof. Dr.</div><div class="b-name">Ahmet ÖZCAN</div><div class="b-inst">Milli Savunma Üniversitesi</div><div class="b-area">Yakınçağ Askeri Tarih, Yakınçağ Yenileşme Tarihi</div></div>
+      <div class="b-card"><div class="b-rank">Doç. Dr.</div><div class="b-name">Bülent DURGUN</div><div class="b-inst">Istanbul Arel University</div><div class="b-area">Uluslararası İlişkiler, Çağdaş Balkan Tarihi, Yakınçağ Askeri Tarih</div></div>
+      <div class="b-card"><div class="b-rank">Doç. Dr.</div><div class="b-name">Barış ATEŞ</div><div class="b-inst">Milli Savunma Üniversitesi, Atatürk Stratejik Araştırmalar Enstitüsü</div><div class="b-area">Askeri Sosyoloji, Savunma Çalışmaları, Savaş Çalışmaları</div></div>
+      <div class="b-card"><div class="b-rank">Prof. Dr.</div><div class="b-name">Edward J. ERİCKSON</div><div class="b-inst">Bağımsız Araştırmacı</div><div class="b-area">Çağdaş ve Yakınçağ Askeri Tarih</div></div>
+      <div class="b-card"><div class="b-rank">Doç. Dr.</div><div class="b-name">Sadık Emre KARAKUŞ</div><div class="b-inst">Milli Savunma Üniversitesi</div><div class="b-area">Osmanlı Sosyoekonomik Tarihi, Yakınçağ Askeri Tarih, Yakınçağ Kent Tarihi</div></div>
     </div>
-
   </div>
 </div>
 
-
-<!-- ═══ YAYIN KURALLARI ═══ -->
+<!-- YAYIN KURALLARI -->
 <div id="page-yayin" class="page-section">
-  <div class="container" style="padding-top:3rem;padding-bottom:4rem;">
-    <div class="section-label">Yazarlara</div>
-    <h2 class="section-title">Yazım Kuralları</h2>
-    <div class="policy-content">
-      <p>TJWS'ye gönderilecek makalelerin aşağıdaki biçimsel ve içeriksel kurallara uygun olması gerekmektedir. Kurallara uymayan makaleler değerlendirmeye alınmadan iade edilebilir.</p>
+  <div class="container">
+    <div class="lbl" style="padding-top:3rem;">Yazarlara</div>
+    <h2 class="sec-title" style="margin-top:.4rem;">Yazım Kuralları</h2>
+    <div class="policy">
+      <p>TJWS'ye gönderilecek makalelerin aşağıdaki biçimsel ve içeriksel kurallara uygun olması gerekmektedir.</p>
       <h3>Genel Kurallar</h3>
       <ul>
         <li>Makaleler Türkçe veya İngilizce yazılmış olmalıdır.</li>
-        <li>Gönderilen çalışmalar daha önce yayımlanmamış ve başka bir dergide değerlendirme sürecinde olmamalıdır.</li>
+        <li>Çalışmalar daha önce yayımlanmamış ve başka bir dergide değerlendirme sürecinde olmamalıdır.</li>
         <li>Tüm makaleler çift-kör hakemlik sürecinden geçmektedir.</li>
         <li>Makale gönderimi yalnızca DergiPark sistemi üzerinden yapılmalıdır.</li>
       </ul>
@@ -1267,168 +470,143 @@
       <ul>
         <li>Makale uzunluğu dipnotlar ve kaynakça dahil 8.000–12.000 kelime arasında olmalıdır.</li>
         <li>Yazı tipi: Times New Roman, 12 punto, 1.5 satır aralığı.</li>
-        <li>Türkçe ve İngilizce özet (150–200 kelime) ile en az 5 anahtar kelime eklenmelidir.</li>
+        <li>Türkçe ve İngilizce özet (150–200 kelime) ve en az 5 anahtar kelime eklenmelidir.</li>
         <li>Atıf sistemi: Chicago tarzı dipnot ve kaynakça sistemi kullanılmalıdır.</li>
       </ul>
-      <h3>İntihal ve Benzerlik Kontrolü</h3>
-      <p>Gönderilen tüm makaleler iThenticate programı ile benzerlik açısından taranmaktadır. Belirgin intihal içerdiği tespit edilen makaleler değerlendirme sürecine alınmadan reddedilir.</p>
+      <h3>İntihal Kontrolü</h3>
+      <p>Gönderilen tüm makaleler iThenticate programı ile taranmaktadır. Belirgin intihal içerenler değerlendirmeye alınmadan reddedilir.</p>
       <h3>Etik Kurul İzni</h3>
-      <p>İnsan ya da hayvan denekleri kapsayan araştırmalarda etik kurul onayı zorunludur; ilgili belge makale ile birlikte sisteme yüklenmelidir.</p>
+      <p>İnsan ya da hayvan denekli araştırmalarda etik kurul onayı zorunludur; ilgili belge makale ile birlikte yüklenmelidir.</p>
     </div>
   </div>
 </div>
 
-
-<!-- ═══ ETİK ═══ -->
+<!-- ETİK -->
 <div id="page-etik" class="page-section">
-  <div class="container" style="padding-top:3rem;padding-bottom:4rem;">
-    <div class="section-label">Politikalar</div>
-    <h2 class="section-title">Etik İlkeler ve Yayın Politikası</h2>
-    <div class="policy-content">
-      <p>Türk Savaş Çalışmaları Dergisi, Yayıncılık Etiği Komitesi (COPE — Committee on Publication Ethics) tarafından belirlenen davranış kurallarını ve yönergeleri benimsemektedir.</p>
+  <div class="container">
+    <div class="lbl" style="padding-top:3rem;">Politikalar</div>
+    <h2 class="sec-title" style="margin-top:.4rem;">Etik İlkeler ve Yayın Politikası</h2>
+    <div class="policy">
+      <p>Türk Savaş Çalışmaları Dergisi, Yayıncılık Etiği Komitesi (COPE) tarafından belirlenen davranış kurallarını ve yönergeleri benimsemektedir.</p>
       <h3>Yazar Sorumlulukları</h3>
       <ul>
-        <li>Yazarlar, çalışmalarının özgün olduğunu beyan etmeli; daha önce yayımlanmış veya değerlendirme sürecindeki çalışmalar gönderilemez.</li>
-        <li>Katkıda bulunan tüm yazarların ismi makalede yer almalı; katkısı olmayan kişiler yazar olarak gösterilemez.</li>
-        <li>Herhangi bir çıkar çatışması varsa editöre bildirilmelidir.</li>
+        <li>Yazarlar çalışmalarının özgün olduğunu beyan etmelidir.</li>
+        <li>Katkıda bulunan tüm yazarların ismi makalede yer almalı; katkısı olmayan kişiler yazar gösterilemez.</li>
+        <li>Çıkar çatışması varsa editöre bildirilmelidir.</li>
       </ul>
       <h3>Hakem Sorumlulukları</h3>
       <ul>
-        <li>Hakemler değerlendirme sürecini gizlilik içinde yürütmeli; makale içeriğini üçüncü kişilerle paylaşmamalıdır.</li>
-        <li>Çıkar çatışması bulunan makaleleri değerlendirmeyi reddedebilirler.</li>
-        <li>Değerlendirmeler nesnel, yapıcı ve kişisel eleştiriden uzak olmalıdır.</li>
+        <li>Hakemler değerlendirme sürecini gizlilik içinde yürütmelidir.</li>
+        <li>Çıkar çatışması olan makaleleri değerlendirmeyi reddedebilirler.</li>
+        <li>Değerlendirmeler nesnel ve yapıcı olmalıdır.</li>
       </ul>
       <h3>Editör Sorumlulukları</h3>
       <ul>
-        <li>Editörler makale kabullerinde yalnızca bilimsel kaliteyi esas alır.</li>
-        <li>Yazarların kimliği, cinsiyeti, kurumu veya milliyeti değerlendirme sürecini etkilemez.</li>
-        <li>Yayımlanmış bir makalede ciddi hata tespit edilirse düzeltme veya geri çekme süreçleri işletilir.</li>
+        <li>Editörler kabulde yalnızca bilimsel kaliteyi esas alır.</li>
+        <li>Yazar kimliği, cinsiyeti veya kurumu değerlendirmeyi etkilemez.</li>
+        <li>Hatalı makaleler için düzeltme veya geri çekme süreçleri işletilir.</li>
       </ul>
       <h3>Açık Erişim Politikası</h3>
-      <p>Dergide yayımlanan tüm makaleler, Budapeşte Açık Erişim Girişimi (BOAI) ilkeleri çerçevesinde ücretsiz ve kısıtlamasız erişime sunulmaktadır. Makaleler <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color:var(--gold);">Creative Commons BY-NC 4.0</a> lisansı ile lisanslanmıştır.</p>
+      <p>Tüm makaleler BOAI ilkeleri çerçevesinde ücretsiz erişime sunulmaktadır. Makaleler <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons BY-NC 4.0</a> lisansı ile lisanslanmıştır.</p>
     </div>
   </div>
 </div>
 
-
-<!-- ═══ MAKALE GÖNDER ═══ -->
+<!-- MAKALE GÖNDER -->
 <div id="page-makale" class="page-section">
-  <div class="container" style="padding-top:3rem;padding-bottom:4rem;">
-    <div class="section-label">Yazarlara</div>
-    <h2 class="section-title">Makale Gönderimi</h2>
-    <div class="policy-content">
+  <div class="container">
+    <div class="lbl" style="padding-top:3rem;">Yazarlara</div>
+    <h2 class="sec-title" style="margin-top:.4rem;">Makale Gönderimi</h2>
+    <div class="policy">
       <p>Türk Savaş Çalışmaları Dergisi'ne makale gönderimleri <strong>DergiPark</strong> platformu üzerinden gerçekleştirilmektedir.</p>
-      <div style="background:var(--parchment);border:1px solid var(--border);padding:2rem;margin:2rem 0;text-align:center;">
-        <p style="font-family:'EB Garamond',serif;font-size:20px;margin-bottom:1rem;">Makale göndermek için DergiPark sistemini kullanınız</p>
-        <a href="https://dergipark.org.tr/tr/journal/3232/submission/step/manuscript/new" target="_blank" style="display:inline-block;background:var(--deep);color:var(--parchment);padding:0.85rem 2.5rem;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;border:2px solid var(--gold);">Makale Gönder →</a>
+      <div class="cta-box">
+        <p>Makale göndermek için DergiPark sistemine giriş yapınız</p>
+        <a href="https://dergipark.org.tr/tr/journal/3232/submission/step/manuscript/new" target="_blank" class="cta-btn">Makale Gönder →</a>
       </div>
-      <p>Makale göndermeden önce <a href="#" onclick="showPage('yayin')" style="color:var(--gold);">Yazım Kuralları</a> ve <a href="#" onclick="showPage('etik')" style="color:var(--gold);">Etik İlkeler</a> sayfalarını incelemenizi tavsiye ederiz.</p>
+      <p>Göndermeden önce <a href="#" onclick="showPage('yayin')">Yazım Kuralları</a> ve <a href="#" onclick="showPage('etik')">Etik İlkeler</a> sayfalarını incelemenizi tavsiye ederiz.</p>
       <h3>Değerlendirme Süreci</h3>
-      <p>Gönderilen makaleler önce ön incelemeye tabi tutulur. Ön incelemeyi geçen makaleler çift-kör hakemlik sürecine alınır. Yazarlara hakem görüşleri iletilir ve gerekli durumlarda revizyon talep edilebilir.</p>
+      <p>Gönderilen makaleler önce ön incelemeye tabi tutulur. Ön incelemeyi geçen makaleler çift-kör hakemlik sürecine alınır; gerekli durumlarda revizyon talep edilebilir.</p>
     </div>
   </div>
 </div>
 
-
-<!-- ═══ İLETİŞİM ═══ -->
+<!-- İLETİŞİM -->
 <div id="page-iletisim" class="page-section">
-  <div class="container" style="padding-top:3rem;padding-bottom:4rem;">
-    <div class="section-label">Bize Ulaşın</div>
-    <h2 class="section-title">İletişim</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:800px;">
-      <div style="border:1px solid var(--rule);padding:2rem;background:white;border-top:3px solid var(--gold);">
-        <h3 style="font-family:'EB Garamond',serif;font-size:20px;margin-bottom:1rem;font-weight:400;">Baş Editör</h3>
-        <p style="font-size:14px;color:var(--muted);line-height:1.8;">
-          <strong style="color:var(--ink);font-size:16px;">Prof. Dr. Mesut UYAR</strong><br>
-          University of New South Wales<br>
-          Canberra, Avustralya<br>
-          <br>
-          ORCID: 0000-0003-0673-7604
-        </p>
+  <div class="container">
+    <div class="lbl" style="padding-top:3rem;">Bize Ulaşın</div>
+    <h2 class="sec-title" style="margin-top:.4rem;">İletişim</h2>
+    <div class="con-grid">
+      <div class="con-card">
+        <h3>Baş Editör</h3>
+        <p><strong style="color:var(--ink);font-size:15px;font-family:var(--font-h);font-weight:800;">Prof. Dr. Mesut UYAR</strong><br><br>University of New South Wales<br>Canberra, Avustralya<br><br>ORCID: <a href="https://orcid.org/0000-0003-0673-7604" target="_blank" style="color:var(--teal);">0000-0003-0673-7604</a></p>
       </div>
-      <div style="border:1px solid var(--rule);padding:2rem;background:white;border-top:3px solid var(--gold);">
-        <h3 style="font-family:'EB Garamond',serif;font-size:20px;margin-bottom:1rem;font-weight:400;">Dergi Platformu</h3>
-        <p style="font-size:14px;color:var(--muted);line-height:1.8;">
-          Makale gönderimi ve takibi için<br>
-          DergiPark sistemini kullanınız.<br><br>
-          <a href="https://dergipark.org.tr/tr/pub/tws" target="_blank" style="color:var(--gold);font-weight:600;">dergipark.org.tr/tr/pub/tws</a>
-        </p>
+      <div class="con-card">
+        <h3>Dergi Platformu</h3>
+        <p>Makale gönderimi ve süreç takibi için DergiPark sistemini kullanınız.<br><br><a href="https://dergipark.org.tr/tr/pub/tws" target="_blank" style="color:var(--teal);font-weight:700;font-family:var(--font-h);">dergipark.org.tr/tr/pub/tws</a></p>
       </div>
     </div>
+    <div style="height:4rem;"></div>
   </div>
 </div>
 
 </main>
 
-<!-- Footer -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <h3>Turkish Journal of War Studies</h3>
-      <p>Türk Savaş Çalışmaları Dergisi, silahlı çatışma ve savaş kavramı üzerine yılda iki sayı yayımlanan hakemli, açık erişimli bir akademik dergidir.</p>
-      <p style="margin-top:0.75rem;font-size:12px;color:#5a5047;">e-ISSN: 2717-7432 &nbsp;·&nbsp; Başlangıç: 2020 &nbsp;·&nbsp; Yayımcı: Prof. Dr. Mesut UYAR</p>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <div class="ft-logo">
+        <img src="logo.png" alt="TJWS Logo">
+        <h3><span>Turkish Journal of</span>War Studies</h3>
+      </div>
+      <p>Silahlı çatışma ve savaş kavramı üzerine yılda iki sayı yayımlanan hakemli, açık erişimli akademik dergi. Türkçe ve İngilizce çalışmaları kabul etmektedir.</p>
+      <div class="ft-chip">e-ISSN: 2717-7432 &nbsp;·&nbsp; Başlangıç: 2020</div>
     </div>
-    <div class="footer-col">
-      <h4>Bağlantılar</h4>
+    <div class="ft-col">
+      <h4>Sayfalar</h4>
       <ul>
-        <li><a href="#" onclick="showPage('home')">Ana Sayfa</a></li>
-        <li><a href="#" onclick="showPage('arsiv')">Arşiv</a></li>
-        <li><a href="#" onclick="showPage('hakkinda')">Hakkında</a></li>
-        <li><a href="#" onclick="showPage('kurul')">Dergi Kurulları</a></li>
-        <li><a href="#" onclick="showPage('iletisim')">İletişim</a></li>
+        <li><a onclick="showPage('home')">Ana Sayfa</a></li>
+        <li><a onclick="showPage('arsiv')">Arşiv</a></li>
+        <li><a onclick="showPage('hakkinda')">Hakkında</a></li>
+        <li><a onclick="showPage('kurul')">Dergi Kurulları</a></li>
+        <li><a onclick="showPage('iletisim')">İletişim</a></li>
       </ul>
     </div>
-    <div class="footer-col">
+    <div class="ft-col">
       <h4>Politikalar</h4>
       <ul>
-        <li><a href="#" onclick="showPage('yayin')">Yazım Kuralları</a></li>
-        <li><a href="#" onclick="showPage('etik')">Etik İlkeler</a></li>
+        <li><a onclick="showPage('yayin')">Yazım Kuralları</a></li>
+        <li><a onclick="showPage('etik')">Etik İlkeler</a></li>
+        <li><a onclick="showPage('makale')">Makale Gönder</a></li>
         <li><a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></li>
         <li><a href="https://dergipark.org.tr/tr/pub/tws" target="_blank">DergiPark</a></li>
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="ft-bot">
     <span>© 2020–2026 Turkish Journal of War Studies. Tüm hakları saklıdır.</span>
-    <span class="cc-badge">
-      <img src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" alt="CC BY-NC 4.0" style="height:15px;">
-      Creative Commons BY-NC 4.0
-    </span>
+    <span><img src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" alt="CC" style="vertical-align:middle;opacity:.4;margin-right:5px;">Creative Commons BY-NC 4.0</span>
   </div>
 </footer>
 
 <script>
-  function showPage(id) {
-    document.querySelectorAll('.page-section').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('nav a').forEach(el => el.classList.remove('active'));
-    const page = document.getElementById('page-' + id);
-    if (page) page.classList.add('active');
-    // scroll to top
-    window.scrollTo({ top: document.querySelector('nav').offsetTop - 10, behavior: 'smooth' });
-    return false;
+function showPage(id){
+  document.querySelectorAll('.page-section').forEach(el=>el.classList.remove('active'));
+  const p=document.getElementById('page-'+id);
+  if(p) p.classList.add('active');
+  window.scrollTo({top:document.querySelector('nav').offsetTop-4,behavior:'smooth'});
+  return false;
+}
+function switchTab(btn,tabId){
+  let par=btn.parentElement;
+  while(par&&!par.querySelector('.tab-pane')) par=par.parentElement;
+  if(par){
+    par.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    par.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
   }
-
-  function switchTab(btn, tabId) {
-    btn.closest('.two-col, .container, main').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    btn.closest('.two-col, .container, main').querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById(tabId).classList.add('active');
-  }
-
-  // Fix switchTab to work within current section
-  function switchTab(btn, tabId) {
-    const container = btn.closest('div');
-    // find parent that has tab-nav
-    let parent = btn.parentElement;
-    while (parent && !parent.querySelector('.tab-pane')) parent = parent.parentElement;
-    if (parent) {
-      parent.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      parent.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-    }
-    btn.classList.add('active');
-    const pane = document.getElementById(tabId);
-    if (pane) pane.classList.add('active');
-  }
+  btn.classList.add('active');
+  const pane=document.getElementById(tabId);
+  if(pane) pane.classList.add('active');
+}
 </script>
 </body>
 </html>
